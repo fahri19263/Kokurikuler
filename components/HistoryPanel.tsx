@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { HistoryItem, CoCurricularFormData } from '../types.ts';
+import { HistoryItem, CoCurricularFormData } from '../types';
 
 interface HistoryPanelProps {
   history: HistoryItem[];

@@ -1,7 +1,6 @@
-
 import React from 'react';
-import { formatPlanText } from '../utils/formatters.ts';
-import { Footer } from '../components/Footer.tsx';
+import { formatPlanText } from '../utils/formatters';
+import { Footer } from '../components/Footer';
 
 interface SharedPlanPageProps {
   planData: {

@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
-import { ThankYouModal } from './ThankYouModal.tsx';
-import { formatPlanText } from '../utils/formatters.ts';
+import { ThankYouModal } from './ThankYouModal';
+import { formatPlanText } from '../utils/formatters';
 
 interface GeneratedPlanProps {
   plan: string;

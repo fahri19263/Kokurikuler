@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { MOCK_ACTIVITIES, MOCK_FAQS } from '../constants.ts';
-import { SkeletonLoader } from '../components/SkeletonLoader.tsx';
-import { Footer } from '../components/Footer.tsx';
-import { PresentationNav } from '../components/PresentationNav.tsx';
+import { MOCK_ACTIVITIES, MOCK_FAQS } from '../constants';
+import { SkeletonLoader } from '../components/SkeletonLoader';
+import { Footer } from '../components/Footer';
+import { PresentationNav } from '../components/PresentationNav';
 
 interface LandingPageProps {
   onNavigateToCreator: () => void;

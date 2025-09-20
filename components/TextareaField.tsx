@@ -1,7 +1,6 @@
 
-
 import React, { forwardRef } from 'react';
-import { Tooltip } from './Tooltip.tsx';
+import { Tooltip } from './Tooltip';
 
 interface TextareaFieldProps {
   label: string;

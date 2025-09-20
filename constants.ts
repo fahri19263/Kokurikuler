@@ -98,25 +98,25 @@ export const MOCK_ACTIVITIES = [
     title: 'Proyek Film Dokumenter Lingkungan',
     target: 'Kelas 7 & 8',
     tags: ['#Kreativitas', '#Digital', '#Lingkungan'],
-    imageUrl: '/images/Proyek Film Dokumenter Lingkunganjpg',
+    imageUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop',
   },
   {
     title: 'Young Entrepreneurs Market Day',
     target: 'Kelas 8 & 9',
     tags: ['#Kewirausahaan', '#Kemandirian', '#Kolaborasi'],
-    imageUrl: '/images/Young Entrepreneurs Market Day.jpg',
+    imageUrl: 'https://iili.io/K7yJ8Je.jpg',
   },
   {
     title: 'Ekspedisi Ilmiah Geopark Belitung',
     target: 'Kelas 10 & 11',
     tags: ['#Sains', '#Petualangan', '#Geologi'],
-    imageUrl: 'images/Ekspedisi Ilmiah Geopark Belitung.jpg',
+    imageUrl: 'https://iili.io/K7yHnvs.jpg',
   },
   {
     title: 'Akademi Pahlawan Super KAIH',
     target: 'Kelas 4-6',
     tags: ['#Karakter', '#Kesehatan', '#Gamifikasi'],
-    imageUrl: 'images/Akademi Pahlawan Super KAIH.jpg',
+    imageUrl: 'https://iili.io/K7pmNIV.jpg',
   },
 ];
 

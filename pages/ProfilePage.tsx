@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
-import { PROFILE_DETAILS } from '../constants';
-import { Footer } from '../components/Footer';
-import { PresentationNav } from '../components/PresentationNav';
+import { PROFILE_DETAILS } from '../constants.ts';
+import { Footer } from '../components/Footer.tsx';
+import { PresentationNav } from '../components/PresentationNav.tsx';
 
 interface ProfilePageProps {
   onNavigateHome: () => void;

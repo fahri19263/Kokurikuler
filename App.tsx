@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
-import { LandingPage } from './pages/LandingPage';
-import { CreatorPage } from './pages/CreatorPage';
-import { ProfilePage } from './pages/ProfilePage';
+import { LandingPage } from './pages/LandingPage.tsx';
+import { CreatorPage } from './pages/CreatorPage.tsx';
+import { ProfilePage } from './pages/ProfilePage.tsx';
 
 const App: React.FC = () => {
     const [view, setView] = useState('landing');

@@ -1,19 +1,20 @@
+
 import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { CoCurricularFormData, HistoryItem } from '../types';
-import { FormSection } from '../components/FormSection';
-import { InputField } from '../components/InputField';
-import { TextareaField } from '../components/TextareaField';
-import { CheckboxField } from '../components/CheckboxField';
-import { SelectField } from '../components/SelectField';
-import { GeneratedPlan } from '../components/GeneratedPlan';
-import { HistoryPanel } from '../components/HistoryPanel';
-import { LevelSelectionModal } from '../components/LevelSelectionModal';
-import { ConfirmationModal } from '../components/ConfirmationModal';
-import { Stepper } from '../components/Stepper';
-import { SkeletonLoader } from '../components/SkeletonLoader';
-import { generateCoCurricularPlan, getRecommendation } from '../services/geminiService';
-import { GRADUATE_PROFILE_DIMENSIONS, TOOLTIP_TEXTS } from '../constants';
-import { ProgressIndicator } from '../components/ProgressIndicator';
+import { CoCurricularFormData, HistoryItem } from '../types.ts';
+import { FormSection } from '../components/FormSection.tsx';
+import { InputField } from '../components/InputField.tsx';
+import { TextareaField } from '../components/TextareaField.tsx';
+import { CheckboxField } from '../components/CheckboxField.tsx';
+import { SelectField } from '../components/SelectField.tsx';
+import { GeneratedPlan } from '../components/GeneratedPlan.tsx';
+import { HistoryPanel } from '../components/HistoryPanel.tsx';
+import { LevelSelectionModal } from '../components/LevelSelectionModal.tsx';
+import { ConfirmationModal } from '../components/ConfirmationModal.tsx';
+import { Stepper } from '../components/Stepper.tsx';
+import { SkeletonLoader } from '../components/SkeletonLoader.tsx';
+import { generateCoCurricularPlan, getRecommendation } from '../services/geminiService.ts';
+import { GRADUATE_PROFILE_DIMENSIONS, TOOLTIP_TEXTS } from '../constants.ts';
+import { ProgressIndicator } from '../components/ProgressIndicator.tsx';
 
 const initialState: CoCurricularFormData = {
   a1_namaKegiatan: '', a2_temaKegiatan: '', a3_penanggungJawab: '', a4_timGuru: '',

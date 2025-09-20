@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { LoadingSpinner } from './LoadingSpinner';
+import { LoadingSpinner } from './LoadingSpinner.tsx';
 
 interface ProgressIndicatorProps {
   title: string;

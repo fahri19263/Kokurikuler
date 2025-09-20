@@ -1,6 +1,7 @@
+
 import { GoogleGenAI, Type } from "@google/genai";
-import type { CoCurricularFormData } from '../types';
-import { GRADUATE_PROFILE_DIMENSIONS } from '../constants';
+import type { CoCurricularFormData } from '../types.ts';
+import { GRADUATE_PROFILE_DIMENSIONS } from '../constants.ts';
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 

@@ -534,6 +534,189 @@
             transform: translateY(-2px) scale(1.02);
         }
         
+        /* MOBILE RESPONSIVE STYLES */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                margin: 0;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 22px;
+                line-height: 1.3;
+            }
+            
+            .header p {
+                font-size: 14px;
+            }
+            
+            .form-container {
+                padding: 20px 15px;
+            }
+            
+            .section {
+                margin-bottom: 25px;
+                padding: 20px 15px;
+                border-left-width: 3px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .section-number {
+                width: 32px;
+                height: 32px;
+                font-size: 13px;
+            }
+            
+            .subsection-title {
+                font-size: 15px;
+            }
+            
+            .form-label {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+            
+            .form-input, .form-textarea {
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            /* Koordinator boxes - force single column */
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+            
+            .team-leader-box, .team-members-box {
+                padding: 20px 15px;
+            }
+            
+            /* Radio buttons - stack vertically */
+            div[style*="display: flex; gap: 20px"] {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            
+            .radio-item {
+                width: 100% !important;
+                justify-content: flex-start !important;
+            }
+            
+            /* Checkbox groups - single column */
+            .checkbox-group {
+                grid-template-columns: 1fr !important;
+                gap: 8px !important;
+            }
+            
+            .checkbox-item {
+                padding: 15px 12px;
+                gap: 10px;
+            }
+            
+            .checkbox-title {
+                font-size: 13px;
+                line-height: 1.4;
+            }
+            
+            /* Touch targets */
+            input[type="checkbox"], input[type="radio"] {
+                transform: scale(1.3);
+                margin-right: 10px;
+            }
+            
+            .timeline-item {
+                padding: 15px;
+                margin-bottom: 12px;
+            }
+            
+            .timeline-label {
+                font-size: 13px;
+            }
+            
+            .actions {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 14px 20px;
+                font-size: 15px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .header {
+                padding: 15px 10px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .form-container {
+                padding: 15px 10px;
+            }
+            
+            .section {
+                padding: 15px 10px;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .subsection-title {
+                font-size: 14px;
+            }
+            
+            .form-input, .form-textarea {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            .team-leader-box, .team-members-box {
+                padding: 15px 10px;
+            }
+            
+            .checkbox-item {
+                padding: 12px 8px;
+            }
+            
+            .checkbox-title {
+                font-size: 12px;
+            }
+        }
+        
         @media print {
             @page {
                 size: A4;
@@ -766,30 +949,6 @@
             
             .section:nth-child(3) {
                 page-break-before: auto;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 8px;
-            }
-            
-            .header {
-                padding: 30px 20px;
-            }
-            
-            .form-container {
-                padding: 30px 20px;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .actions {
-                flex-direction: column;
-                align-items: center;
             }
         }
     </style>
@@ -1550,5 +1709,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98416f3952e2ce2b',t:'MTc1ODcwODAyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9841c5de149e7373',t:'MTc1ODcxMTU3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

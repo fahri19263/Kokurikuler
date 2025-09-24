@@ -255,14 +255,14 @@
         }
         
         .classroom-seat {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border: 2px solid #d1d5db;
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 9px;
+            font-size: 8px;
             font-weight: bold;
             text-align: center;
             line-height: 1.1;
@@ -271,15 +271,34 @@
             color: #6b7280;
             position: relative;
             overflow: hidden;
+            padding: 2px;
+        }
+        
+        @media (min-width: 480px) {
+            .classroom-seat {
+                width: 55px;
+                height: 55px;
+                font-size: 9px;
+                padding: 3px;
+            }
         }
         
         @media (min-width: 640px) {
             .classroom-seat {
-                width: 70px;
-                height: 70px;
-                font-size: 11px;
+                width: 65px;
+                height: 65px;
+                font-size: 10px;
                 line-height: 1.2;
                 border-radius: 8px;
+                padding: 4px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .classroom-seat {
+                width: 75px;
+                height: 75px;
+                font-size: 11px;
             }
         }
         
@@ -321,6 +340,41 @@
                 transform: translateY(-1px) scale(1.01);
             }
         }
+
+        /* Enhanced mobile navigation */
+        @media (max-width: 768px) {
+            .nav-mobile {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                border-top: 1px solid #e5e7eb;
+                padding: 8px;
+                z-index: 50;
+            }
+        }
+
+        /* Alert animations */
+        .alert-slide-in {
+            animation: slideInAlert 0.3s ease-out;
+        }
+
+        @keyframes slideInAlert {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Progress bar animation */
+        .progress-animate {
+            transition: width 0.3s ease-out;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gray-50">
@@ -329,7 +383,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <span class="text-2xl font-bold text-indigo-600">Portal Digital Guru</span>
+                    <span class="text-xl sm:text-2xl font-bold text-indigo-600">Portal Digital Guru</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
@@ -339,6 +393,24 @@
                         <a href="#" onclick="showContactModal()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                     </div>
                 </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-indigo-600 p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="showHome(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Beranda</a>
+                <a href="#" onclick="toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Profil Saya</a>
+                <a href="#" onclick="toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Materi Pelajaran</a>
+                <a href="#" onclick="showContactModal(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Kontak</a>
             </div>
         </div>
     </nav>
@@ -346,22 +418,22 @@
     <!-- Home Page -->
     <div id="home-page">
         <!-- Header Section -->
-        <div class="gradient-bg py-16">
+        <div class="gradient-bg py-12 sm:py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center fade-in-up">
                     <!-- Profile Photo -->
-                    <div class="w-32 h-32 mx-auto mb-6 bg-white rounded-full shadow-xl flex items-center justify-center overflow-hidden icon-hover cursor-pointer">
-                        <span class="text-6xl">👨‍💻</span>
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 bg-white rounded-full shadow-xl flex items-center justify-center overflow-hidden icon-hover cursor-pointer">
+                        <span class="text-4xl sm:text-6xl">👨‍💻</span>
                     </div>
                     
                     <!-- Identity -->
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
                         Fahri, S.Pd
                     </h1>
-                    <p class="text-xl text-indigo-100 mb-1">
+                    <p class="text-lg sm:text-xl text-indigo-100 mb-1">
                         Guru Informatika
                     </p>
-                    <p class="text-lg text-indigo-200 mb-6">
+                    <p class="text-base sm:text-lg text-indigo-200 mb-6">
                         SMP Negeri 2 Manggar
                     </p>
                     <div class="w-24 h-1 bg-white mx-auto rounded-full opacity-80"></div>
@@ -370,82 +442,82 @@
         </div>
 
         <!-- Welcome Section -->
-        <div class="py-16 bg-white">
+        <div class="py-12 sm:py-16 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6 fade-in-up">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 fade-in-up">
                     Selamat Datang di Portal Digital Saya
                 </h2>
-                <p class="text-lg text-gray-600 leading-relaxed fade-in-up">
+                <p class="text-base sm:text-lg text-gray-600 leading-relaxed fade-in-up">
                     Media ini saya dedikasikan untuk mendukung proses belajar-mengajar yang lebih efektif, interaktif, dan menyenangkan bagi siswa-siswi SMP Negeri 2 Manggar. Silakan manfaatkan fasilitas yang tersedia untuk membantu aktivitas pembelajaran Anda.
                 </p>
             </div>
         </div>
 
         <!-- Main Feature Cards -->
-        <div class="py-16 bg-gray-50">
+        <div class="py-12 sm:py-16 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-2xl font-bold text-center text-gray-900 mb-12">Fitur Utama Portal</h3>
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12">Fitur Utama Portal</h3>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                     <!-- Kokurikuler Card -->
-                    <div class="card-hover bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('kokurikuler')">
+                    <div class="card-hover bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('kokurikuler')">
                         <div class="text-center">
-                            <div class="card-icon w-20 h-20 mx-auto mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <span class="text-4xl">🏆</span>
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🏆</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Kokurikuler</h3>
-                            <p class="text-purple-100 mb-6 text-sm leading-relaxed">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Kokurikuler</h3>
+                            <p class="text-purple-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Kelola kegiatan kokurikuler mulai dari perencanaan, pendaftaran, hingga laporan kegiatan siswa.
                             </p>
-                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-lg">
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
                                 Lihat Selengkapnya
                             </button>
                         </div>
                     </div>
 
                     <!-- Acak Tempat Duduk Card -->
-                    <div class="card-hover bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('tempat-duduk')">
+                    <div class="card-hover bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('tempat-duduk')">
                         <div class="text-center">
-                            <div class="card-icon w-20 h-20 mx-auto mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <span class="text-4xl">🪑</span>
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🪑</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Generator Denah Kelas</h3>
-                            <p class="text-blue-100 mb-6 text-sm leading-relaxed">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Generator Denah Kelas</h3>
+                            <p class="text-blue-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Ciptakan suasana belajar yang baru dan adil. Acak posisi tempat duduk siswa secara otomatis di sini.
                             </p>
-                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-lg">
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
                                 Mulai Acak
                             </button>
                         </div>
                     </div>
 
                     <!-- Acak Kelompok Card -->
-                    <div class="card-hover bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('kelompok')">
+                    <div class="card-hover bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('kelompok')">
                         <div class="text-center">
-                            <div class="card-icon w-20 h-20 mx-auto mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <span class="text-4xl">🧩</span>
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🧩</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Pembagi Kelompok Cerdas</h3>
-                            <p class="text-green-100 mb-6 text-sm leading-relaxed">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Pembagi Kelompok Cerdas</h3>
+                            <p class="text-green-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Butuh membagi kelompok untuk tugas atau diskusi? Gunakan alat ini untuk pembagian yang cepat dan adil.
                             </p>
-                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-lg">
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
                                 Buat Kelompok
                             </button>
                         </div>
                     </div>
 
                     <!-- Acak Urutan Tampil Card -->
-                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('urutan-tampil')">
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('urutan-tampil')">
                         <div class="text-center">
-                            <div class="card-icon w-20 h-20 mx-auto mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <span class="text-4xl">🎯</span>
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎯</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Pengacak Urutan Tampil</h3>
-                            <p class="text-orange-100 mb-6 text-sm leading-relaxed">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Pengacak Urutan Tampil</h3>
+                            <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Tentukan urutan siswa maju ke depan secara acak dan adil untuk presentasi atau tugas.
                             </p>
-                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-lg">
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
                                 Acak Urutan
                             </button>
                         </div>
@@ -457,64 +529,64 @@
 
     <!-- Kokurikuler Page -->
     <div id="kokurikuler-page" class="hidden min-h-screen bg-gradient-to-br from-purple-400 to-pink-500">
-        <div class="py-8 px-4 sm:px-6 lg:px-8">
+        <div class="py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto">
-                <button onclick="showHome()" class="btn-secondary mb-8 bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg hover:bg-opacity-30 flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="showHome()" class="btn-secondary mb-6 sm:mb-8 bg-white bg-opacity-20 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-opacity-30 flex items-center text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                     Kembali ke Beranda
                 </button>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-xl">
-                    <div class="text-center mb-8">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                            <span class="text-3xl">🏆</span>
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <div class="text-center mb-6 sm:mb-8">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl">🏆</span>
                         </div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Kokurikuler</h2>
-                        <p class="text-gray-600">Sistem pengelolaan kegiatan kokurikuler siswa SMP Negeri 2 Manggar</p>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4">Kokurikuler</h2>
+                        <p class="text-sm sm:text-base text-gray-600">Sistem pengelolaan kegiatan kokurikuler siswa SMP Negeri 2 Manggar</p>
                     </div>
                     
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-gradient-to-r from-pink-400 to-red-400 p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-xl font-bold mb-3">📝 Form Rancangan Kegiatan</h3>
-                            <p class="mb-4">Buat rancangan kegiatan kokurikuler baru</p>
-                            <button onclick="window.open('https://fahri19263.github.io/website/formkokurikuler.html', '_blank')" class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="bg-gradient-to-r from-pink-400 to-red-400 p-4 sm:p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">📝 Form Rancangan Kegiatan</h3>
+                            <p class="mb-4 text-sm sm:text-base">Buat rancangan kegiatan kokurikuler baru</p>
+                            <button onclick="window.open('https://fahri19263.github.io/website/formkokurikuler.html', '_blank')" class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Buat Rancangan
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-indigo-400 to-purple-400 p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-xl font-bold mb-3">📋 Form Pendaftaran</h3>
-                            <p class="mb-4">Daftarkan siswa untuk kegiatan kokurikuler</p>
-                            <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
+                        <div class="bg-gradient-to-r from-indigo-400 to-purple-400 p-4 sm:p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">📋 Form Pendaftaran</h3>
+                            <p class="mb-4 text-sm sm:text-base">Daftarkan siswa untuk kegiatan kokurikuler</p>
+                            <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Buka Form
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-blue-400 to-indigo-400 p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-xl font-bold mb-3">👨‍🎓 Daftar Peserta</h3>
-                            <p class="mb-4">Lihat siswa yang terdaftar dalam kegiatan</p>
-                            <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
+                        <div class="bg-gradient-to-r from-blue-400 to-indigo-400 p-4 sm:p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">👨‍🎓 Daftar Peserta</h3>
+                            <p class="mb-4 text-sm sm:text-base">Lihat siswa yang terdaftar dalam kegiatan</p>
+                            <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Lihat Data
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-emerald-400 to-cyan-400 p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-xl font-bold mb-3">📅 Jadwal Kegiatan</h3>
-                            <p class="mb-4">Atur dan kelola jadwal kokurikuler</p>
-                            <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
+                        <div class="bg-gradient-to-r from-emerald-400 to-cyan-400 p-4 sm:p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">📅 Jadwal Kegiatan</h3>
+                            <p class="mb-4 text-sm sm:text-base">Atur dan kelola jadwal kokurikuler</p>
+                            <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Lihat Jadwal
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-orange-400 to-pink-400 p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-xl font-bold mb-3">🏆 Prestasi Siswa</h3>
-                            <p class="mb-4">Dokumentasi prestasi dan pencapaian</p>
-                            <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
+                        <div class="bg-gradient-to-r from-orange-400 to-pink-400 p-4 sm:p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">🏆 Prestasi Siswa</h3>
+                            <p class="mb-4 text-sm sm:text-base">Dokumentasi prestasi dan pencapaian</p>
+                            <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Lihat Prestasi
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-cyan-400 to-blue-400 p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-xl font-bold mb-3">📊 Laporan Kegiatan</h3>
-                            <p class="mb-4">Buat laporan dan evaluasi kegiatan</p>
-                            <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-400 p-4 sm:p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">📊 Laporan Kegiatan</h3>
+                            <p class="mb-4 text-sm sm:text-base">Buat laporan dan evaluasi kegiatan</p>
+                            <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Buat Laporan
                             </button>
                         </div>
@@ -527,7 +599,7 @@
     <!-- Tempat Duduk Page -->
     <div id="tempat-duduk-page" class="hidden min-h-screen bg-gradient-to-br from-blue-400 to-cyan-500">
         <div class="py-4 sm:py-8 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-7xl mx-auto">
                 <button onclick="showHome()" class="btn-secondary mb-4 sm:mb-8 bg-white bg-opacity-20 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-opacity-30 flex items-center text-sm sm:text-base">
                     <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -544,68 +616,93 @@
                         <p class="text-sm sm:text-base text-gray-600 px-2">Atur tempat duduk siswa secara acak untuk menciptakan dinamika kelas yang baru</p>
                     </div>
                     
-                    <div class="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8">
+                    <div class="flex flex-col xl:flex-row gap-6 xl:gap-8">
                         <!-- Input Section -->
-                        <div class="space-y-4 sm:space-y-6">
+                        <div class="xl:w-1/2 space-y-4 sm:space-y-6">
                             <div>
-                                <div class="flex justify-between items-center mb-2">
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-1">
                                     <label class="block text-gray-700 font-bold text-sm sm:text-base">Daftar Nama Siswa:</label>
-                                    <span id="student-counter" class="text-xs sm:text-sm text-blue-600 font-semibold">0 siswa</span>
+                                    <div class="flex items-center gap-2">
+                                        <span id="student-counter" class="text-xs sm:text-sm text-blue-600 font-semibold">0 siswa</span>
+                                        <div id="validation-indicator" class="hidden">
+                                            <span class="text-xs px-2 py-1 rounded-full bg-red-100 text-red-600">⚠️ Perlu perbaikan</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <textarea id="student-list" rows="8" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 focus:border-blue-500 focus:outline-none resize-none text-sm sm:text-base" placeholder="Masukkan nama siswa, satu nama per baris:&#10;Ahmad Rizki&#10;Siti Nurhaliza&#10;Budi Santoso&#10;Rina Melati&#10;Doni Pratama&#10;Lina Sari&#10;Eko Wijaya&#10;Maya Putri&#10;Andi Kurniawan&#10;Dewi Lestari" oninput="updateStudentCounter()"></textarea>
+                                <textarea id="student-list" rows="6" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 focus:border-blue-500 focus:outline-none resize-none text-sm sm:text-base transition-all" placeholder="Masukkan nama siswa, satu nama per baris:&#10;Ahmad Rizki&#10;Siti Nurhaliza&#10;Budi Santoso&#10;Rina Melati&#10;Doni Pratama&#10;Lina Sari&#10;Eko Wijaya&#10;Maya Putri&#10;Andi Kurniawan&#10;Dewi Lestari" oninput="validateAndUpdateCounter()"></textarea>
+                                <div id="input-error" class="hidden mt-2 p-2 bg-red-50 border border-red-200 rounded text-sm text-red-600"></div>
                             </div>
                             
                             <div class="grid grid-cols-2 gap-3 sm:gap-4">
                                 <div>
                                     <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Jumlah Baris:</label>
-                                    <input type="number" id="rows" value="5" min="3" max="8" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-blue-500 focus:outline-none text-sm sm:text-base" onchange="updateSeatingCapacity()">
+                                    <input type="number" id="rows" value="5" min="3" max="8" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-blue-500 focus:outline-none text-sm sm:text-base transition-all" onchange="updateSeatingCapacity()">
                                 </div>
                                 <div>
                                     <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Jumlah Kolom:</label>
-                                    <input type="number" id="cols" value="6" min="4" max="8" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-blue-500 focus:outline-none text-sm sm:text-base" onchange="updateSeatingCapacity()">
+                                    <input type="number" id="cols" value="6" min="4" max="8" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-blue-500 focus:outline-none text-sm sm:text-base transition-all" onchange="updateSeatingCapacity()">
                                 </div>
                             </div>
                             
-                            <div id="capacity-info" class="text-center p-3 bg-blue-50 rounded-lg">
+                            <div id="capacity-info" class="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
                                 <span class="text-blue-700 font-semibold text-sm sm:text-base">Kapasitas: 30 tempat duduk</span>
                             </div>
                             
-                            <div class="text-center space-y-3">
-                                <button onclick="animateSeatingArrangement()" class="btn-primary bg-blue-500 hover:bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center mx-auto w-full sm:w-auto">
+                            <!-- Enhanced Loading State -->
+                            <div id="seating-loading" class="hidden text-center py-6">
+                                <div class="relative">
+                                    <div class="loading-spinner mx-auto mb-4"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span class="text-2xl animate-bounce">🪑</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-medium">Mengacak tempat duduk...</p>
+                                <div class="mt-2 bg-blue-50 rounded-lg p-2">
+                                    <div class="h-2 bg-blue-200 rounded-full overflow-hidden">
+                                        <div id="progress-bar" class="h-full bg-blue-500 rounded-full progress-animate" style="width: 0%"></div>
+                                    </div>
+                                    <p class="text-xs text-blue-600 mt-1" id="progress-text">Mempersiapkan...</p>
+                                </div>
+                            </div>
+                            
+                            <div id="seating-controls" class="text-center space-y-3">
+                                <button id="shuffle-btn" onclick="animateSeatingArrangement()" class="btn-primary bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center mx-auto w-full transition-all">
                                     <span class="text-xl sm:text-2xl mr-2">🎲</span>
-                                    ACAK TEMPAT DUDUK
+                                    <span id="shuffle-btn-text">ACAK TEMPAT DUDUK</span>
                                 </button>
-                                <button onclick="resetSeatingChart()" class="btn-secondary bg-gray-500 hover:bg-gray-600 text-white px-4 sm:px-6 py-2 rounded-lg text-xs sm:text-sm">
+                                <button onclick="resetSeatingChart()" class="btn-secondary bg-gray-500 hover:bg-gray-600 text-white px-4 sm:px-6 py-2 rounded-lg text-xs sm:text-sm w-full sm:w-auto transition-all">
                                     🔄 Reset Denah
                                 </button>
                             </div>
                         </div>
                         
                         <!-- Seating Chart Section -->
-                        <div class="bg-gray-50 rounded-xl p-3 sm:p-6 mt-6 lg:mt-0">
-                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 space-y-2 sm:space-y-0">
+                        <div class="xl:w-1/2 bg-gray-50 rounded-xl p-3 sm:p-6">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
                                 <h3 class="text-lg sm:text-xl font-bold text-gray-800">Denah Kelas:</h3>
-                                <button id="save-btn" onclick="downloadSeatingChart()" class="bg-green-500 hover:bg-green-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm transition-all opacity-50 cursor-not-allowed w-full sm:w-auto" disabled>
-                                    💾 Simpan sebagai Gambar
-                                </button>
+                                <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                                    <button id="save-btn" onclick="downloadSeatingChart()" class="bg-green-500 hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm transition-all opacity-50 cursor-not-allowed" disabled>
+                                        💾 Simpan Gambar
+                                    </button>
+                                </div>
                             </div>
                             
                             <!-- Teacher's Desk -->
                             <div class="mb-4 sm:mb-6">
                                 <div class="bg-amber-100 border-2 border-amber-300 rounded-lg p-2 sm:p-4 text-center">
-                                    <div class="text-amber-800 font-bold text-sm sm:text-lg">👨‍🏫 MEJA GURU</div>
+                                    <div class="text-amber-800 font-bold text-xs sm:text-lg">👨‍🏫 MEJA GURU</div>
                                 </div>
                             </div>
                             
                             <!-- Seating Grid -->
-                            <div class="overflow-x-auto">
-                                <div id="classroom-grid" class="grid gap-1 sm:gap-3 justify-center mb-4 min-w-max mx-auto" style="grid-template-columns: repeat(6, 1fr);">
+                            <div class="overflow-x-auto pb-2">
+                                <div id="classroom-grid" class="grid gap-1 sm:gap-2 justify-center mb-4 min-w-max mx-auto" style="grid-template-columns: repeat(6, 1fr);">
                                     <!-- Seats will be generated here -->
                                 </div>
                             </div>
                             
                             <!-- Legend -->
-                            <div class="flex justify-center space-x-4 sm:space-x-6 text-xs sm:text-sm">
+                            <div class="flex justify-center space-x-3 sm:space-x-6 text-xs sm:text-sm">
                                 <div class="flex items-center">
                                     <div class="w-3 h-3 sm:w-4 sm:h-4 bg-blue-200 border border-blue-300 rounded mr-1 sm:mr-2"></div>
                                     <span class="text-gray-600">Terisi</span>
@@ -622,89 +719,87 @@
         </div>
     </div>
 
-
-
     <!-- Urutan Tampil Page -->
     <div id="urutan-tampil-page" class="hidden min-h-screen bg-gradient-to-br from-orange-400 to-red-500">
-        <div class="py-8 px-4 sm:px-6 lg:px-8">
+        <div class="py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto">
-                <button onclick="showHome()" class="btn-secondary mb-8 bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg hover:bg-opacity-30 flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="showHome()" class="btn-secondary mb-6 sm:mb-8 bg-white bg-opacity-20 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-opacity-30 flex items-center text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                     Kembali ke Beranda
                 </button>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-xl">
-                    <div class="text-center mb-8">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
-                            <span class="text-3xl">🎯</span>
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <div class="text-center mb-6 sm:mb-8">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl">🎯</span>
                         </div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Pengacak Urutan Tampil</h2>
-                        <p class="text-gray-600">Tentukan urutan siswa maju ke depan secara acak dan adil untuk presentasi atau tugas</p>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4">Pengacak Urutan Tampil</h2>
+                        <p class="text-sm sm:text-base text-gray-600">Tentukan urutan siswa maju ke depan secara acak dan adil untuk presentasi atau tugas</p>
                     </div>
                     
-                    <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="grid lg:grid-cols-2 gap-6 sm:gap-8">
                         <!-- Input Section -->
-                        <div class="space-y-6">
+                        <div class="space-y-4 sm:space-y-6">
                             <div>
                                 <div class="flex justify-between items-center mb-2">
-                                    <label class="block text-gray-700 font-bold">Daftar Nama Siswa:</label>
-                                    <span id="presentation-counter" class="text-sm text-orange-600 font-semibold">0 siswa</span>
+                                    <label class="block text-gray-700 font-bold text-sm sm:text-base">Daftar Nama Siswa:</label>
+                                    <span id="presentation-counter" class="text-xs sm:text-sm text-orange-600 font-semibold">0 siswa</span>
                                 </div>
-                                <textarea id="presentation-student-list" rows="10" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-orange-500 focus:outline-none resize-none" placeholder="Masukkan nama siswa, satu nama per baris:&#10;Ahmad Rizki&#10;Siti Nurhaliza&#10;Budi Santoso&#10;Rina Melati&#10;Doni Pratama&#10;Lina Sari&#10;Eko Wijaya&#10;Maya Putri&#10;Andi Kurniawan&#10;Dewi Lestari" oninput="updatePresentationCounter()"></textarea>
+                                <textarea id="presentation-student-list" rows="8" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 focus:border-orange-500 focus:outline-none resize-none text-sm sm:text-base" placeholder="Masukkan nama siswa, satu nama per baris:&#10;Ahmad Rizki&#10;Siti Nurhaliza&#10;Budi Santoso&#10;Rina Melati&#10;Doni Pratama&#10;Lina Sari&#10;Eko Wijaya&#10;Maya Putri&#10;Andi Kurniawan&#10;Dewi Lestari" oninput="updatePresentationCounter()"></textarea>
                             </div>
                             
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-gray-700 font-bold mb-2">Mode Pengacakan:</label>
-                                    <select id="presentation-mode" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-orange-500 focus:outline-none" onchange="togglePresentationMode()">
+                                    <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Mode Pengacakan:</label>
+                                    <select id="presentation-mode" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-orange-500 focus:outline-none text-sm sm:text-base" onchange="togglePresentationMode()">
                                         <option value="all">Semua Siswa Sekaligus</option>
                                         <option value="one-by-one">Satu per Satu</option>
                                     </select>
                                 </div>
                                 <div id="batch-size-input" class="hidden">
-                                    <label class="block text-gray-700 font-bold mb-2">Jumlah per Batch:</label>
-                                    <input type="number" id="batch-size" value="5" min="1" max="10" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-orange-500 focus:outline-none">
+                                    <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Jumlah per Batch:</label>
+                                    <input type="number" id="batch-size" value="5" min="1" max="10" class="input-focus w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-orange-500 focus:outline-none text-sm sm:text-base">
                                 </div>
                             </div>
                             
                             <div class="text-center space-y-3">
-                                <button id="start-presentation-btn" onclick="startPresentationOrder()" class="btn-primary bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center mx-auto">
-                                    <span class="text-2xl mr-2">🎯</span>
+                                <button id="start-presentation-btn" onclick="startPresentationOrder()" class="btn-primary bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center mx-auto w-full">
+                                    <span class="text-xl sm:text-2xl mr-2">🎯</span>
                                     MULAI PENGACAKAN
                                 </button>
-                                <button id="next-student-btn" onclick="getNextStudent()" class="hidden btn-secondary bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold">
+                                <button id="next-student-btn" onclick="getNextStudent()" class="hidden btn-secondary bg-red-500 hover:bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold w-full sm:w-auto">
                                     👆 Siswa Selanjutnya
                                 </button>
-                                <button onclick="resetPresentationOrder()" class="btn-secondary bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg text-sm">
+                                <button onclick="resetPresentationOrder()" class="btn-secondary bg-gray-500 hover:bg-gray-600 text-white px-4 sm:px-6 py-2 rounded-lg text-xs sm:text-sm w-full sm:w-auto">
                                     🔄 Reset Urutan
                                 </button>
                             </div>
                         </div>
                         
                         <!-- Result Section -->
-                        <div class="bg-gray-50 rounded-xl p-6">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="text-xl font-bold text-gray-800">Urutan Tampil:</h3>
-                                <button id="copy-order-btn" onclick="copyPresentationOrder()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-all opacity-50 cursor-not-allowed" disabled>
+                        <div class="bg-gray-50 rounded-xl p-4 sm:p-6">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-800">Urutan Tampil:</h3>
+                                <button id="copy-order-btn" onclick="copyPresentationOrder()" class="bg-blue-500 hover:bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm transition-all opacity-50 cursor-not-allowed w-full sm:w-auto" disabled>
                                     📋 Salin Urutan
                                 </button>
                             </div>
                             
                             <!-- Current Student Display -->
                             <div id="current-student-display" class="hidden mb-6">
-                                <div class="bg-gradient-to-r from-orange-400 to-red-400 text-white p-6 rounded-xl text-center">
-                                    <div class="text-sm font-semibold mb-2">GILIRAN SEKARANG:</div>
-                                    <div id="current-student-name" class="text-2xl font-bold mb-2"></div>
-                                    <div id="current-student-number" class="text-sm opacity-90"></div>
+                                <div class="bg-gradient-to-r from-orange-400 to-red-400 text-white p-4 sm:p-6 rounded-xl text-center">
+                                    <div class="text-xs sm:text-sm font-semibold mb-2">GILIRAN SEKARANG:</div>
+                                    <div id="current-student-name" class="text-xl sm:text-2xl font-bold mb-2"></div>
+                                    <div id="current-student-number" class="text-xs sm:text-sm opacity-90"></div>
                                 </div>
                             </div>
                             
                             <!-- Order List -->
                             <div id="presentation-loading" class="hidden text-center py-8">
                                 <div class="loading-spinner mx-auto mb-4"></div>
-                                <p class="text-gray-600">Mengacak urutan...</p>
+                                <p class="text-gray-600 text-sm sm:text-base">Mengacak urutan...</p>
                             </div>
                             
                             <div id="presentation-result" class="hidden">
@@ -712,8 +807,8 @@
                             </div>
                             
                             <!-- Statistics -->
-                            <div id="presentation-stats" class="hidden mt-6 p-4 bg-orange-50 rounded-lg">
-                                <div class="text-center text-sm text-orange-700">
+                            <div id="presentation-stats" class="hidden mt-6 p-3 sm:p-4 bg-orange-50 rounded-lg">
+                                <div class="text-center text-xs sm:text-sm text-orange-700">
                                     <div id="remaining-count" class="font-semibold"></div>
                                     <div id="completed-count" class="text-xs mt-1"></div>
                                 </div>
@@ -727,53 +822,53 @@
 
     <!-- Kelompok Page -->
     <div id="kelompok-page" class="hidden min-h-screen bg-gradient-to-br from-green-400 to-teal-500">
-        <div class="py-8 px-4 sm:px-6 lg:px-8">
+        <div class="py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto">
-                <button onclick="showHome()" class="btn-secondary mb-8 bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg hover:bg-opacity-30 flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="showHome()" class="btn-secondary mb-6 sm:mb-8 bg-white bg-opacity-20 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-opacity-30 flex items-center text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                     Kembali ke Beranda
                 </button>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-xl">
-                    <div class="text-center mb-8">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-                            <span class="text-3xl">🧩</span>
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <div class="text-center mb-6 sm:mb-8">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl">🧩</span>
                         </div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Pembagi Kelompok Cerdas</h2>
-                        <p class="text-gray-600">Buat kelompok belajar secara acak untuk meningkatkan kerja sama antar siswa</p>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4">Pembagi Kelompok Cerdas</h2>
+                        <p class="text-sm sm:text-base text-gray-600">Buat kelompok belajar secara acak untuk meningkatkan kerja sama antar siswa</p>
                     </div>
                     
-                    <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="grid lg:grid-cols-2 gap-6 sm:gap-8">
                         <!-- Input Section -->
-                        <div class="space-y-6">
+                        <div class="space-y-4 sm:space-y-6">
                             <div>
-                                <label class="block text-gray-700 font-bold mb-2">Daftar Nama Siswa:</label>
-                                <textarea id="group-student-list" rows="8" class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-green-500 focus:outline-none" placeholder="Masukkan nama siswa, satu nama per baris:&#10;Ahmad&#10;Siti&#10;Budi&#10;Rina&#10;..."></textarea>
+                                <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Daftar Nama Siswa:</label>
+                                <textarea id="group-student-list" rows="6" class="w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 focus:border-green-500 focus:outline-none text-sm sm:text-base" placeholder="Masukkan nama siswa, satu nama per baris:&#10;Ahmad&#10;Siti&#10;Budi&#10;Rina&#10;..."></textarea>
                             </div>
                             
                             <div>
-                                <label class="block text-gray-700 font-bold mb-2">Metode Pembagian:</label>
-                                <select id="division-method" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-green-500 focus:outline-none" onchange="toggleDivisionInput()">
+                                <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Metode Pembagian:</label>
+                                <select id="division-method" class="w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-green-500 focus:outline-none text-sm sm:text-base" onchange="toggleDivisionInput()">
                                     <option value="by-groups">Berdasarkan Jumlah Kelompok</option>
                                     <option value="by-members">Berdasarkan Jumlah Anggota per Kelompok</option>
                                 </select>
                             </div>
                             
                             <div id="group-count-input">
-                                <label class="block text-gray-700 font-bold mb-2">Jumlah Kelompok:</label>
-                                <input type="number" id="group-count" value="4" min="2" max="10" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-green-500 focus:outline-none">
+                                <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Jumlah Kelompok:</label>
+                                <input type="number" id="group-count" value="4" min="2" max="10" class="w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-green-500 focus:outline-none text-sm sm:text-base">
                             </div>
                             
                             <div id="members-count-input" class="hidden">
-                                <label class="block text-gray-700 font-bold mb-2">Jumlah Anggota per Kelompok:</label>
-                                <input type="number" id="members-count" value="4" min="2" max="8" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-green-500 focus:outline-none">
+                                <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Jumlah Anggota per Kelompok:</label>
+                                <input type="number" id="members-count" value="4" min="2" max="8" class="w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 focus:border-green-500 focus:outline-none text-sm sm:text-base">
                             </div>
                             
                             <div class="text-center">
-                                <button onclick="randomizeGroups()" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center mx-auto">
-                                    <span class="text-2xl mr-2">👥</span>
+                                <button onclick="randomizeGroups()" class="bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all transform hover:scale-105 flex items-center justify-center mx-auto w-full">
+                                    <span class="text-xl sm:text-2xl mr-2">👥</span>
                                     BAGI KELOMPOK!
                                 </button>
                             </div>
@@ -783,17 +878,17 @@
                         <div>
                             <div id="group-loading" class="hidden text-center py-8">
                                 <div class="loading-spinner mx-auto mb-4"></div>
-                                <p class="text-gray-600">Membagi kelompok...</p>
+                                <p class="text-gray-600 text-sm sm:text-base">Membagi kelompok...</p>
                             </div>
                             
                             <div id="group-result" class="hidden">
-                                <div class="flex justify-between items-center mb-4">
-                                    <h3 class="text-xl font-bold text-gray-800">Hasil Pembagian Kelompok:</h3>
-                                    <div class="space-x-2">
-                                        <button onclick="randomizeGroups()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
+                                    <h3 class="text-lg sm:text-xl font-bold text-gray-800">Hasil Pembagian Kelompok:</h3>
+                                    <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                                        <button onclick="randomizeGroups()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm transition-all">
                                             🔄 Acak Ulang
                                         </button>
-                                        <button onclick="copyGroupResult()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                        <button onclick="copyGroupResult()" class="bg-blue-500 hover:bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm transition-all">
                                             📋 Salin Hasil
                                         </button>
                                     </div>
@@ -811,30 +906,30 @@
     <div id="contact-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 transform transition-all scale-95 opacity-0" id="contact-modal-content">
             <div class="text-center mb-6">
-                <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-                    <span class="text-3xl">📱</span>
+                <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="text-2xl sm:text-3xl">📱</span>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Hubungi Saya</h3>
-                <p class="text-gray-600 text-sm">Kirim pesan langsung ke WhatsApp saya</p>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Hubungi Saya</h3>
+                <p class="text-gray-600 text-xs sm:text-sm">Kirim pesan langsung ke WhatsApp saya</p>
             </div>
             
             <form id="contact-form" class="space-y-4">
                 <div>
-                    <label class="block text-gray-700 font-semibold mb-2 text-sm">Nama Anda:</label>
-                    <input type="text" id="contact-name" class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-green-500 focus:outline-none transition-all" placeholder="Masukkan nama Anda" required>
+                    <label class="block text-gray-700 font-semibold mb-2 text-xs sm:text-sm">Nama Anda:</label>
+                    <input type="text" id="contact-name" class="w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 focus:border-green-500 focus:outline-none transition-all text-sm sm:text-base" placeholder="Masukkan nama Anda" required>
                 </div>
                 
                 <div>
-                    <label class="block text-gray-700 font-semibold mb-2 text-sm">Pesan:</label>
-                    <textarea id="contact-message" rows="4" class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-green-500 focus:outline-none resize-none transition-all" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    <label class="block text-gray-700 font-semibold mb-2 text-xs sm:text-sm">Pesan:</label>
+                    <textarea id="contact-message" rows="4" class="w-full border-2 border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 focus:border-green-500 focus:outline-none resize-none transition-all text-sm sm:text-base" placeholder="Tulis pesan Anda di sini..." required></textarea>
                 </div>
                 
-                <div class="flex space-x-3 pt-4">
-                    <button type="button" onclick="closeContactModal()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-3 px-4 rounded-lg font-semibold transition-all">
+                <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 pt-4">
+                    <button type="button" onclick="closeContactModal()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 sm:py-3 px-4 rounded-lg font-semibold transition-all text-sm sm:text-base">
                         Batal
                     </button>
-                    <button type="submit" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-lg font-semibold transition-all flex items-center justify-center">
-                        <span class="text-lg mr-2">📱</span>
+                    <button type="submit" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 sm:py-3 px-4 rounded-lg font-semibold transition-all flex items-center justify-center text-sm sm:text-base">
+                        <span class="text-base sm:text-lg mr-2">📱</span>
                         Kirim ke WhatsApp
                     </button>
                 </div>
@@ -843,6 +938,12 @@
     </div>
 
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
         // Navigation functions
         function navigateToPage(page) {
             const homePage = document.getElementById('home-page');
@@ -921,23 +1022,72 @@
             }
         }
 
-        // Seating arrangement functions
-        function updateStudentCounter() {
+        // Enhanced validation and counter functions
+        function validateAndUpdateCounter() {
             const studentListText = document.getElementById('student-list').value.trim();
             const students = studentListText ? studentListText.split('\n').filter(name => name.trim() !== '') : [];
             const counter = document.getElementById('student-counter');
-            counter.textContent = `${students.length} siswa`;
+            const errorDiv = document.getElementById('input-error');
+            const validationIndicator = document.getElementById('validation-indicator');
+            const shuffleBtn = document.getElementById('shuffle-btn');
             
+            let hasError = false;
+            let errorMessage = '';
+            
+            // Check for empty input
+            if (students.length === 0 && studentListText.length > 0) {
+                hasError = true;
+                errorMessage = 'Daftar siswa tidak boleh kosong atau hanya berisi spasi.';
+            }
+            
+            // Check for duplicate names
+            const duplicates = students.filter((name, index) => students.indexOf(name) !== index);
+            if (duplicates.length > 0) {
+                hasError = true;
+                errorMessage = `Nama duplikat ditemukan: ${[...new Set(duplicates)].join(', ')}`;
+            }
+            
+            // Check for very short names
+            const shortNames = students.filter(name => name.length < 2);
+            if (shortNames.length > 0) {
+                hasError = true;
+                errorMessage = 'Beberapa nama terlalu pendek (minimal 2 karakter).';
+            }
+            
+            // Check capacity
             const rows = parseInt(document.getElementById('rows').value);
             const cols = parseInt(document.getElementById('cols').value);
             const capacity = rows * cols;
             
             if (students.length > capacity) {
-                counter.className = 'text-sm text-red-600 font-semibold';
-                counter.textContent = `${students.length} siswa (Melebihi kapasitas!)`;
-            } else {
-                counter.className = 'text-sm text-blue-600 font-semibold';
+                hasError = true;
+                errorMessage = `Jumlah siswa (${students.length}) melebihi kapasitas tempat duduk (${capacity}).`;
             }
+            
+            // Update UI based on validation
+            if (hasError) {
+                counter.className = 'text-xs sm:text-sm text-red-600 font-semibold';
+                counter.textContent = `${students.length} siswa`;
+                errorDiv.textContent = errorMessage;
+                errorDiv.classList.remove('hidden');
+                validationIndicator.classList.remove('hidden');
+                shuffleBtn.disabled = true;
+                shuffleBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                counter.className = 'text-xs sm:text-sm text-blue-600 font-semibold';
+                counter.textContent = `${students.length} siswa`;
+                errorDiv.classList.add('hidden');
+                validationIndicator.classList.add('hidden');
+                shuffleBtn.disabled = students.length === 0;
+                if (students.length > 0) {
+                    shuffleBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+            }
+        }
+        
+        // Legacy function for compatibility
+        function updateStudentCounter() {
+            validateAndUpdateCounter();
         }
 
         function updateSeatingCapacity() {
@@ -946,10 +1096,10 @@
             const capacity = rows * cols;
             
             document.getElementById('capacity-info').innerHTML = 
-                `<span class="text-blue-700 font-semibold">Kapasitas: ${capacity} tempat duduk</span>`;
+                `<span class="text-blue-700 font-semibold text-sm sm:text-base">Kapasitas: ${capacity} tempat duduk</span>`;
             
             generateEmptySeats();
-            updateStudentCounter();
+            validateAndUpdateCounter();
         }
 
         function generateEmptySeats() {
@@ -972,7 +1122,7 @@
         function animateSeatingArrangement() {
             const studentListText = document.getElementById('student-list').value.trim();
             if (!studentListText) {
-                alert('Silakan masukkan daftar nama siswa terlebih dahulu!');
+                showAlert('Silakan masukkan daftar nama siswa terlebih dahulu!', 'warning');
                 return;
             }
 
@@ -981,36 +1131,112 @@
             const cols = parseInt(document.getElementById('cols').value);
             const totalSeats = rows * cols;
 
-            if (students.length > totalSeats) {
-                alert(`Jumlah siswa (${students.length}) melebihi kapasitas tempat duduk (${totalSeats}). Silakan kurangi jumlah siswa atau tambah tempat duduk.`);
+            // Validate before proceeding
+            if (students.length === 0) {
+                showAlert('Daftar siswa tidak boleh kosong!', 'error');
                 return;
             }
 
-            // Disable button during animation
-            const button = event.target;
-            button.disabled = true;
-            button.innerHTML = '<span class="text-2xl mr-2">⏳</span>MENGACAK...';
+            if (students.length > totalSeats) {
+                showAlert(`Jumlah siswa (${students.length}) melebihi kapasitas tempat duduk (${totalSeats}). Silakan kurangi jumlah siswa atau tambah tempat duduk.`, 'error');
+                return;
+            }
+
+            // Show enhanced loading state
+            showLoadingState();
+            
+            // Hide controls and show loading
+            document.getElementById('seating-controls').classList.add('hidden');
+            document.getElementById('seating-loading').classList.remove('hidden');
+
+            // Simulate progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 90) progress = 90;
+                updateProgress(progress, 'Mengacak posisi siswa...');
+            }, 100);
 
             // Shuffle students
             const shuffledStudents = [...students].sort(() => Math.random() - 0.5);
             
-            // Create flying animations
-            shuffledStudents.forEach((student, index) => {
-                setTimeout(() => {
-                    createFlyingName(student, index);
-                }, index * 200);
-            });
-
-            // Re-enable button after animation
             setTimeout(() => {
-                button.disabled = false;
-                button.innerHTML = '<span class="text-2xl mr-2">🎲</span>ACAK TEMPAT DUDUK';
+                clearInterval(progressInterval);
+                updateProgress(100, 'Menyelesaikan...');
                 
-                // Enable save button
-                const saveBtn = document.getElementById('save-btn');
-                saveBtn.disabled = false;
-                saveBtn.className = saveBtn.className.replace('opacity-50 cursor-not-allowed', '');
-            }, shuffledStudents.length * 200 + 1000);
+                // Create flying animations
+                shuffledStudents.forEach((student, index) => {
+                    setTimeout(() => {
+                        createFlyingName(student, index);
+                    }, index * 150);
+                });
+
+                // Complete the process
+                setTimeout(() => {
+                    hideLoadingState();
+                    
+                    // Enable save button
+                    const saveBtn = document.getElementById('save-btn');
+                    saveBtn.disabled = false;
+                    saveBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    
+                    showAlert('Tempat duduk berhasil diacak! 🎉', 'success');
+                }, shuffledStudents.length * 150 + 500);
+            }, 1000);
+        }
+
+        function showLoadingState() {
+            const button = document.getElementById('shuffle-btn');
+            button.disabled = true;
+            button.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+
+        function hideLoadingState() {
+            document.getElementById('seating-loading').classList.add('hidden');
+            document.getElementById('seating-controls').classList.remove('hidden');
+            
+            const button = document.getElementById('shuffle-btn');
+            button.disabled = false;
+            button.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        function updateProgress(percentage, text) {
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            if (progressBar) progressBar.style.width = percentage + '%';
+            if (progressText) progressText.textContent = text;
+        }
+
+        function showAlert(message, type = 'info') {
+            // Create alert element
+            const alert = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : type === 'warning' ? 'bg-yellow-500' : 'bg-blue-500';
+            
+            alert.className = `fixed top-4 right-4 ${bgColor} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 max-w-sm`;
+            alert.innerHTML = `
+                <div class="flex items-center">
+                    <span class="mr-2">${type === 'success' ? '✅' : type === 'error' ? '❌' : type === 'warning' ? '⚠️' : 'ℹ️'}</span>
+                    <span class="text-xs sm:text-sm font-medium">${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(alert);
+            
+            // Show alert
+            setTimeout(() => {
+                alert.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Hide alert after 4 seconds
+            setTimeout(() => {
+                alert.classList.add('translate-x-full');
+                setTimeout(() => {
+                    if (alert.parentNode) {
+                        alert.parentNode.removeChild(alert);
+                    }
+                }, 300);
+            }, 4000);
         }
 
         function createFlyingName(studentName, seatIndex) {
@@ -1057,7 +1283,7 @@
             // Disable save button
             const saveBtn = document.getElementById('save-btn');
             saveBtn.disabled = true;
-            saveBtn.className += ' opacity-50 cursor-not-allowed';
+            saveBtn.classList.add('opacity-50', 'cursor-not-allowed');
         }
 
         function downloadSeatingChart() {
@@ -1144,12 +1370,6 @@
             link.click();
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            generateEmptySeats();
-            updateStudentCounter();
-        });
-
         // Presentation order variables
         let presentationStudents = [];
         let currentStudentIndex = 0;
@@ -1179,13 +1399,13 @@
         function startPresentationOrder() {
             const studentListText = document.getElementById('presentation-student-list').value.trim();
             if (!studentListText) {
-                alert('Silakan masukkan daftar nama siswa terlebih dahulu!');
+                showAlert('Silakan masukkan daftar nama siswa terlebih dahulu!', 'warning');
                 return;
             }
 
             const students = studentListText.split('\n').filter(name => name.trim() !== '');
             if (students.length === 0) {
-                alert('Daftar siswa tidak boleh kosong!');
+                showAlert('Daftar siswa tidak boleh kosong!', 'error');
                 return;
             }
 
@@ -1212,7 +1432,7 @@
                 // Enable copy button
                 const copyBtn = document.getElementById('copy-order-btn');
                 copyBtn.disabled = false;
-                copyBtn.className = copyBtn.className.replace('opacity-50 cursor-not-allowed', '');
+                copyBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             }, 1000);
         }
 
@@ -1224,14 +1444,14 @@
                 const orderItem = document.createElement('div');
                 orderItem.className = 'flex items-center p-3 bg-white rounded-lg border-2 border-orange-200 transform transition-all hover:scale-102';
                 orderItem.innerHTML = `
-                    <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 text-xs sm:text-base">
                         ${index + 1}
                     </div>
                     <div class="flex-1">
-                        <div class="font-semibold text-gray-800">${student}</div>
-                        <div class="text-sm text-gray-500">Urutan ke-${index + 1}</div>
+                        <div class="font-semibold text-gray-800 text-sm sm:text-base">${student}</div>
+                        <div class="text-xs sm:text-sm text-gray-500">Urutan ke-${index + 1}</div>
                     </div>
-                    <div class="text-orange-500 font-bold text-lg">
+                    <div class="text-orange-500 font-bold text-base sm:text-lg">
                         ${index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '📝'}
                     </div>
                 `;
@@ -1273,10 +1493,10 @@
                 } else {
                     // All students completed
                     document.getElementById('current-student-display').innerHTML = `
-                        <div class="bg-gradient-to-r from-green-400 to-blue-400 text-white p-6 rounded-xl text-center">
-                            <div class="text-2xl mb-2">🎉</div>
-                            <div class="text-xl font-bold">Semua Siswa Sudah Tampil!</div>
-                            <div class="text-sm mt-2 opacity-90">Presentasi selesai</div>
+                        <div class="bg-gradient-to-r from-green-400 to-blue-400 text-white p-4 sm:p-6 rounded-xl text-center">
+                            <div class="text-xl sm:text-2xl mb-2">🎉</div>
+                            <div class="text-lg sm:text-xl font-bold">Semua Siswa Sudah Tampil!</div>
+                            <div class="text-xs sm:text-sm mt-2 opacity-90">Presentasi selesai</div>
                         </div>
                     `;
                     document.getElementById('next-student-btn').classList.add('hidden');
@@ -1321,14 +1541,14 @@
                 
                 orderItem.className = `flex items-center p-3 rounded-lg border-2 ${statusClass} transition-all`;
                 orderItem.innerHTML = `
-                    <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 text-xs sm:text-base">
                         ${index + 1}
                     </div>
                     <div class="flex-1">
-                        <div class="font-semibold text-gray-800">${student}</div>
-                        <div class="text-sm text-gray-500">${statusText}</div>
+                        <div class="font-semibold text-gray-800 text-sm sm:text-base">${student}</div>
+                        <div class="text-xs sm:text-sm text-gray-500">${statusText}</div>
                     </div>
-                    <div class="text-lg">
+                    <div class="text-base sm:text-lg">
                         ${statusIcon}
                     </div>
                 `;
@@ -1365,12 +1585,12 @@
             // Disable copy button
             const copyBtn = document.getElementById('copy-order-btn');
             copyBtn.disabled = true;
-            copyBtn.className += ' opacity-50 cursor-not-allowed';
+            copyBtn.classList.add('opacity-50', 'cursor-not-allowed');
         }
 
         function copyPresentationOrder() {
             if (presentationStudents.length === 0) {
-                alert('Belum ada urutan yang dibuat!');
+                showAlert('Belum ada urutan yang dibuat!', 'warning');
                 return;
             }
             
@@ -1387,9 +1607,9 @@
             }
             
             navigator.clipboard.writeText(result).then(() => {
-                alert('Urutan tampil berhasil disalin ke clipboard!');
+                showAlert('Urutan tampil berhasil disalin ke clipboard!', 'success');
             }).catch(() => {
-                alert('Gagal menyalin ke clipboard. Silakan salin secara manual.');
+                showAlert('Gagal menyalin ke clipboard. Silakan salin secara manual.', 'error');
             });
         }
 
@@ -1411,7 +1631,7 @@
         function randomizeGroups() {
             const studentListText = document.getElementById('group-student-list').value.trim();
             if (!studentListText) {
-                alert('Silakan masukkan daftar nama siswa terlebih dahulu!');
+                showAlert('Silakan masukkan daftar nama siswa terlebih dahulu!', 'warning');
                 return;
             }
 
@@ -1456,16 +1676,16 @@
             
             groups.forEach((group, index) => {
                 const groupDiv = document.createElement('div');
-                groupDiv.className = 'bg-green-50 p-6 rounded-xl border-2 border-green-200 transform transition-all hover:scale-102';
+                groupDiv.className = 'bg-green-50 p-4 sm:p-6 rounded-xl border-2 border-green-200 transform transition-all hover:scale-102';
                 groupDiv.innerHTML = `
-                    <h4 class="font-bold text-green-800 mb-4 text-lg flex items-center">
-                        <span class="text-2xl mr-2">👥</span>
+                    <h4 class="font-bold text-green-800 mb-3 sm:mb-4 text-base sm:text-lg flex items-center">
+                        <span class="text-xl sm:text-2xl mr-2">👥</span>
                         Kelompok ${index + 1} (${group.length} orang)
                     </h4>
                     <ul class="space-y-2">
                         ${group.map((student, idx) => `
-                            <li class="text-gray-700 flex items-center">
-                                <span class="w-6 h-6 bg-green-200 text-green-800 rounded-full flex items-center justify-center text-sm font-bold mr-3">${idx + 1}</span>
+                            <li class="text-gray-700 flex items-center text-sm sm:text-base">
+                                <span class="w-5 h-5 sm:w-6 sm:h-6 bg-green-200 text-green-800 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-2 sm:mr-3">${idx + 1}</span>
                                 ${student}
                             </li>
                         `).join('')}
@@ -1492,13 +1712,11 @@
             });
             
             navigator.clipboard.writeText(result).then(() => {
-                alert('Hasil pembagian kelompok berhasil disalin ke clipboard!');
+                showAlert('Hasil pembagian kelompok berhasil disalin ke clipboard!', 'success');
             }).catch(() => {
-                alert('Gagal menyalin ke clipboard. Silakan salin secara manual.');
+                showAlert('Gagal menyalin ke clipboard. Silakan salin secara manual.', 'error');
             });
         }
-
-
 
         // Contact Modal Functions
         function showContactModal() {
@@ -1542,7 +1760,7 @@
             const message = document.getElementById('contact-message').value.trim();
             
             if (!name || !message) {
-                alert('Mohon lengkapi nama dan pesan Anda!');
+                showAlert('Mohon lengkapi nama dan pesan Anda!', 'warning');
                 return;
             }
             
@@ -1563,7 +1781,7 @@
             
             // Show success message
             setTimeout(() => {
-                alert('Pesan Anda akan dibuka di WhatsApp. Terima kasih telah menghubungi saya! 😊');
+                showAlert('Pesan Anda akan dibuka di WhatsApp. Terima kasih telah menghubungi saya! 😊', 'success');
             }, 500);
         });
 
@@ -1584,8 +1802,12 @@
             }
         });
 
-        // Initialize animations
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
+            generateEmptySeats();
+            validateAndUpdateCounter();
+            
+            // Initialize animations
             const cards = document.querySelectorAll('.card-hover');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
@@ -1598,5 +1820,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9841556100df9fe3',t:'MTc1ODcwNjk2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'984173aca668f88e',t:'MTc1ODcwODIwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

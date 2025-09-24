@@ -376,16 +376,16 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h3 class="text-2xl font-bold text-center text-gray-900 mb-12">Fitur Utama Portal</h3>
                 
-                <div class="grid md:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Kokurikuler Card -->
                     <div class="card-hover bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('kokurikuler')">
                         <div class="text-center">
                             <div class="card-icon w-20 h-20 mx-auto mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                 <span class="text-4xl">🏆</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Galeri Kokurikuler</h3>
+                            <h3 class="text-2xl font-bold mb-4">Kokurikuler</h3>
                             <p class="text-purple-100 mb-6 text-sm leading-relaxed">
-                                Form kokurikuler untuk dokumentasi dan pengelolaan kegiatan siswa di luar jam pelajaran reguler.
+                                Kelola kegiatan kokurikuler mulai dari perencanaan, pendaftaran, hingga laporan kegiatan siswa.
                             </p>
                             <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-lg">
                                 Lihat Selengkapnya
@@ -424,6 +424,22 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Acak Urutan Tampil Card -->
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('urutan-tampil')">
+                        <div class="text-center">
+                            <div class="card-icon w-20 h-20 mx-auto mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-4xl">🎯</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Pengacak Urutan Tampil</h3>
+                            <p class="text-orange-100 mb-6 text-sm leading-relaxed">
+                                Tentukan urutan siswa maju ke depan secara acak dan adil untuk presentasi atau tugas.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-lg">
+                                Acak Urutan
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -445,13 +461,13 @@
                         <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
                             <span class="text-3xl">🏆</span>
                         </div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Galeri Kokurikuler</h2>
-                        <p class="text-gray-600">Form dan dokumentasi kegiatan kokurikuler siswa SMP Negeri 2 Manggar</p>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Kokurikuler</h2>
+                        <p class="text-gray-600">Sistem pengelolaan kegiatan kokurikuler siswa SMP Negeri 2 Manggar</p>
                     </div>
                     
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-gradient-to-r from-purple-400 to-pink-400 p-6 rounded-xl text-white card-hover cursor-pointer" onclick="navigateToPage('form-rancangan')">
-                            <h3 class="text-xl font-bold mb-3">📝 Form Rancangan</h3>
+                        <div class="bg-gradient-to-r from-pink-400 to-red-400 p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-xl font-bold mb-3">📝 Form Rancangan Kegiatan</h3>
                             <p class="mb-4">Buat rancangan kegiatan kokurikuler baru</p>
                             <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
                                 Buat Rancangan
@@ -471,13 +487,6 @@
                                 Lihat Data
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-cyan-400 to-blue-400 p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-xl font-bold mb-3">📊 Laporan Kegiatan</h3>
-                            <p class="mb-4">Buat laporan dan evaluasi kegiatan</p>
-                            <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
-                                Buat Laporan
-                            </button>
-                        </div>
                         <div class="bg-gradient-to-r from-emerald-400 to-cyan-400 p-6 rounded-xl text-white card-hover">
                             <h3 class="text-xl font-bold mb-3">📅 Jadwal Kegiatan</h3>
                             <p class="mb-4">Atur dan kelola jadwal kokurikuler</p>
@@ -490,6 +499,13 @@
                             <p class="mb-4">Dokumentasi prestasi dan pencapaian</p>
                             <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
                                 Lihat Prestasi
+                            </button>
+                        </div>
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-400 p-6 rounded-xl text-white card-hover">
+                            <h3 class="text-xl font-bold mb-3">📊 Laporan Kegiatan</h3>
+                            <p class="mb-4">Buat laporan dan evaluasi kegiatan</p>
+                            <button class="bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm hover:bg-opacity-30 transition-all">
+                                Buat Laporan
                             </button>
                         </div>
                     </div>
@@ -594,111 +610,104 @@
         </div>
     </div>
 
-    <!-- Form Rancangan Page -->
-    <div id="form-rancangan-page" class="hidden min-h-screen bg-gradient-to-br from-purple-400 to-pink-500">
+
+
+    <!-- Urutan Tampil Page -->
+    <div id="urutan-tampil-page" class="hidden min-h-screen bg-gradient-to-br from-orange-400 to-red-500">
         <div class="py-8 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <button onclick="navigateToPage('kokurikuler')" class="btn-secondary mb-8 bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg hover:bg-opacity-30 flex items-center">
+            <div class="max-w-6xl mx-auto">
+                <button onclick="showHome()" class="btn-secondary mb-8 bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg hover:bg-opacity-30 flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
-                    Kembali ke Galeri
+                    Kembali ke Beranda
                 </button>
                 
                 <div class="bg-white rounded-2xl p-8 shadow-xl">
                     <div class="text-center mb-8">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                            <span class="text-3xl">📝</span>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🎯</span>
                         </div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Form Rancangan Kegiatan Kokurikuler</h2>
-                        <p class="text-gray-600">Buat rancangan kegiatan kokurikuler yang terstruktur dan komprehensif</p>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Pengacak Urutan Tampil</h2>
+                        <p class="text-gray-600">Tentukan urutan siswa maju ke depan secara acak dan adil untuk presentasi atau tugas</p>
                     </div>
                     
-                    <form id="rancangan-form" class="space-y-6" onsubmit="submitRancangan(event)">
-                        <div class="grid md:grid-cols-2 gap-6">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Input Section -->
+                        <div class="space-y-6">
                             <div>
-                                <label class="block text-gray-700 font-bold mb-2">Nama Kegiatan *</label>
-                                <input type="text" id="nama-kegiatan" required class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none" placeholder="Contoh: Ekstrakurikuler Robotika">
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="block text-gray-700 font-bold">Daftar Nama Siswa:</label>
+                                    <span id="presentation-counter" class="text-sm text-orange-600 font-semibold">0 siswa</span>
+                                </div>
+                                <textarea id="presentation-student-list" rows="10" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-orange-500 focus:outline-none resize-none" placeholder="Masukkan nama siswa, satu nama per baris:&#10;Ahmad Rizki&#10;Siti Nurhaliza&#10;Budi Santoso&#10;Rina Melati&#10;Doni Pratama&#10;Lina Sari&#10;Eko Wijaya&#10;Maya Putri&#10;Andi Kurniawan&#10;Dewi Lestari" oninput="updatePresentationCounter()"></textarea>
                             </div>
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Jenis Kegiatan *</label>
-                                <select id="jenis-kegiatan" required class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none">
-                                    <option value="">Pilih Jenis Kegiatan</option>
-                                    <option value="olahraga">Olahraga</option>
-                                    <option value="seni">Seni & Budaya</option>
-                                    <option value="sains">Sains & Teknologi</option>
-                                    <option value="bahasa">Bahasa</option>
-                                    <option value="kepramukaan">Kepramukaan</option>
-                                    <option value="keagamaan">Keagamaan</option>
-                                    <option value="lainnya">Lainnya</option>
-                                </select>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">Mode Pengacakan:</label>
+                                    <select id="presentation-mode" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-orange-500 focus:outline-none" onchange="togglePresentationMode()">
+                                        <option value="all">Semua Siswa Sekaligus</option>
+                                        <option value="one-by-one">Satu per Satu</option>
+                                    </select>
+                                </div>
+                                <div id="batch-size-input" class="hidden">
+                                    <label class="block text-gray-700 font-bold mb-2">Jumlah per Batch:</label>
+                                    <input type="number" id="batch-size" value="5" min="1" max="10" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-orange-500 focus:outline-none">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 font-bold mb-2">Deskripsi Kegiatan *</label>
-                            <textarea id="deskripsi-kegiatan" required rows="4" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none resize-none" placeholder="Jelaskan tujuan, manfaat, dan gambaran umum kegiatan..."></textarea>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Tanggal Mulai *</label>
-                                <input type="date" id="tanggal-mulai" required class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Tanggal Selesai *</label>
-                                <input type="date" id="tanggal-selesai" required class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Waktu Pelaksanaan *</label>
-                                <input type="time" id="waktu-pelaksanaan" required class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none">
+                            
+                            <div class="text-center space-y-3">
+                                <button id="start-presentation-btn" onclick="startPresentationOrder()" class="btn-primary bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center mx-auto">
+                                    <span class="text-2xl mr-2">🎯</span>
+                                    MULAI PENGACAKAN
+                                </button>
+                                <button id="next-student-btn" onclick="getNextStudent()" class="hidden btn-secondary bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold">
+                                    👆 Siswa Selanjutnya
+                                </button>
+                                <button onclick="resetPresentationOrder()" class="btn-secondary bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg text-sm">
+                                    🔄 Reset Urutan
+                                </button>
                             </div>
                         </div>
                         
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Tempat Pelaksanaan *</label>
-                                <input type="text" id="tempat-pelaksanaan" required class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none" placeholder="Contoh: Lab Komputer, Lapangan Sekolah">
+                        <!-- Result Section -->
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">Urutan Tampil:</h3>
+                                <button id="copy-order-btn" onclick="copyPresentationOrder()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-all opacity-50 cursor-not-allowed" disabled>
+                                    📋 Salin Urutan
+                                </button>
                             </div>
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Penanggung Jawab *</label>
-                                <input type="text" id="penanggung-jawab" required class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none" placeholder="Nama Guru/Pembina">
+                            
+                            <!-- Current Student Display -->
+                            <div id="current-student-display" class="hidden mb-6">
+                                <div class="bg-gradient-to-r from-orange-400 to-red-400 text-white p-6 rounded-xl text-center">
+                                    <div class="text-sm font-semibold mb-2">GILIRAN SEKARANG:</div>
+                                    <div id="current-student-name" class="text-2xl font-bold mb-2"></div>
+                                    <div id="current-student-number" class="text-sm opacity-90"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Order List -->
+                            <div id="presentation-loading" class="hidden text-center py-8">
+                                <div class="loading-spinner mx-auto mb-4"></div>
+                                <p class="text-gray-600">Mengacak urutan...</p>
+                            </div>
+                            
+                            <div id="presentation-result" class="hidden">
+                                <div id="order-list" class="space-y-2 max-h-96 overflow-y-auto"></div>
+                            </div>
+                            
+                            <!-- Statistics -->
+                            <div id="presentation-stats" class="hidden mt-6 p-4 bg-orange-50 rounded-lg">
+                                <div class="text-center text-sm text-orange-700">
+                                    <div id="remaining-count" class="font-semibold"></div>
+                                    <div id="completed-count" class="text-xs mt-1"></div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Target Peserta</label>
-                                <input type="number" id="target-peserta" min="5" max="100" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none" placeholder="Jumlah siswa">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-bold mb-2">Estimasi Biaya</label>
-                                <input type="number" id="estimasi-biaya" min="0" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none" placeholder="Dalam Rupiah">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 font-bold mb-2">Sarana dan Prasarana yang Dibutuhkan</label>
-                            <textarea id="sarana-prasarana" rows="3" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none resize-none" placeholder="Daftar peralatan, ruangan, atau fasilitas yang diperlukan..."></textarea>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 font-bold mb-2">Rencana Kegiatan/Agenda</label>
-                            <textarea id="rencana-kegiatan" rows="4" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none resize-none" placeholder="Outline kegiatan per pertemuan atau tahapan pelaksanaan..."></textarea>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 font-bold mb-2">Indikator Keberhasilan</label>
-                            <textarea id="indikator-keberhasilan" rows="3" class="input-focus w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-purple-500 focus:outline-none resize-none" placeholder="Bagaimana mengukur keberhasilan kegiatan ini..."></textarea>
-                        </div>
-                        
-                        <div class="text-center pt-6">
-                            <button type="submit" class="btn-primary bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center mx-auto">
-                                <span class="text-2xl mr-2">💾</span>
-                                SIMPAN RANCANGAN
-                            </button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -810,6 +819,12 @@
                 // Reset any previous transforms
                 targetPage.style.opacity = '1';
                 targetPage.style.transform = 'translateX(0)';
+                
+                // Scroll to top smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }, 400);
         }
 
@@ -833,6 +848,12 @@
                     homePage.style.opacity = '0';
                     homePage.style.transform = 'translateX(-50px)';
                     
+                    // Scroll to top smoothly
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
                     setTimeout(() => {
                         homePage.style.transition = 'all 0.5s ease-out';
                         homePage.style.opacity = '1';
@@ -844,6 +865,12 @@
                 homePage.style.display = 'block';
                 homePage.style.opacity = '1';
                 homePage.style.transform = 'translateX(0)';
+                
+                // Scroll to top smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
         }
 
@@ -1067,6 +1094,249 @@
             updateStudentCounter();
         });
 
+        // Presentation order variables
+        let presentationStudents = [];
+        let currentStudentIndex = 0;
+        let presentationMode = 'all';
+
+        // Presentation order functions
+        function updatePresentationCounter() {
+            const studentListText = document.getElementById('presentation-student-list').value.trim();
+            const students = studentListText ? studentListText.split('\n').filter(name => name.trim() !== '') : [];
+            const counter = document.getElementById('presentation-counter');
+            counter.textContent = `${students.length} siswa`;
+        }
+
+        function togglePresentationMode() {
+            const mode = document.getElementById('presentation-mode').value;
+            const batchSizeInput = document.getElementById('batch-size-input');
+            
+            if (mode === 'batch') {
+                batchSizeInput.classList.remove('hidden');
+            } else {
+                batchSizeInput.classList.add('hidden');
+            }
+            
+            presentationMode = mode;
+        }
+
+        function startPresentationOrder() {
+            const studentListText = document.getElementById('presentation-student-list').value.trim();
+            if (!studentListText) {
+                alert('Silakan masukkan daftar nama siswa terlebih dahulu!');
+                return;
+            }
+
+            const students = studentListText.split('\n').filter(name => name.trim() !== '');
+            if (students.length === 0) {
+                alert('Daftar siswa tidak boleh kosong!');
+                return;
+            }
+
+            // Shuffle students
+            presentationStudents = [...students].sort(() => Math.random() - 0.5);
+            currentStudentIndex = 0;
+
+            const mode = document.getElementById('presentation-mode').value;
+
+            // Show loading
+            document.getElementById('presentation-result').classList.add('hidden');
+            document.getElementById('current-student-display').classList.add('hidden');
+            document.getElementById('presentation-loading').classList.remove('hidden');
+
+            setTimeout(() => {
+                document.getElementById('presentation-loading').classList.add('hidden');
+                
+                if (mode === 'all') {
+                    displayAllPresentationOrder();
+                } else {
+                    setupOneByOneMode();
+                }
+                
+                // Enable copy button
+                const copyBtn = document.getElementById('copy-order-btn');
+                copyBtn.disabled = false;
+                copyBtn.className = copyBtn.className.replace('opacity-50 cursor-not-allowed', '');
+            }, 1000);
+        }
+
+        function displayAllPresentationOrder() {
+            const orderList = document.getElementById('order-list');
+            orderList.innerHTML = '';
+            
+            presentationStudents.forEach((student, index) => {
+                const orderItem = document.createElement('div');
+                orderItem.className = 'flex items-center p-3 bg-white rounded-lg border-2 border-orange-200 transform transition-all hover:scale-102';
+                orderItem.innerHTML = `
+                    <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                        ${index + 1}
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-semibold text-gray-800">${student}</div>
+                        <div class="text-sm text-gray-500">Urutan ke-${index + 1}</div>
+                    </div>
+                    <div class="text-orange-500 font-bold text-lg">
+                        ${index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '📝'}
+                    </div>
+                `;
+                
+                // Add animation delay
+                orderItem.style.opacity = '0';
+                orderItem.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    orderItem.style.transition = 'all 0.5s ease-out';
+                    orderItem.style.opacity = '1';
+                    orderItem.style.transform = 'translateY(0)';
+                }, index * 100);
+                
+                orderList.appendChild(orderItem);
+            });
+            
+            document.getElementById('presentation-result').classList.remove('hidden');
+            document.getElementById('presentation-result').classList.add('result-appear');
+        }
+
+        function setupOneByOneMode() {
+            document.getElementById('start-presentation-btn').classList.add('hidden');
+            document.getElementById('next-student-btn').classList.remove('hidden');
+            document.getElementById('current-student-display').classList.remove('hidden');
+            document.getElementById('presentation-stats').classList.remove('hidden');
+            
+            showCurrentStudent();
+            updatePresentationStats();
+        }
+
+        function getNextStudent() {
+            if (currentStudentIndex < presentationStudents.length) {
+                // Mark current student as completed in the list
+                markStudentCompleted(currentStudentIndex);
+                currentStudentIndex++;
+                
+                if (currentStudentIndex < presentationStudents.length) {
+                    showCurrentStudent();
+                } else {
+                    // All students completed
+                    document.getElementById('current-student-display').innerHTML = `
+                        <div class="bg-gradient-to-r from-green-400 to-blue-400 text-white p-6 rounded-xl text-center">
+                            <div class="text-2xl mb-2">🎉</div>
+                            <div class="text-xl font-bold">Semua Siswa Sudah Tampil!</div>
+                            <div class="text-sm mt-2 opacity-90">Presentasi selesai</div>
+                        </div>
+                    `;
+                    document.getElementById('next-student-btn').classList.add('hidden');
+                }
+                
+                updatePresentationStats();
+            }
+        }
+
+        function showCurrentStudent() {
+            const currentStudent = presentationStudents[currentStudentIndex];
+            document.getElementById('current-student-name').textContent = currentStudent;
+            document.getElementById('current-student-number').textContent = `Urutan ke-${currentStudentIndex + 1} dari ${presentationStudents.length}`;
+            
+            // Update or create the order list for one-by-one mode
+            updateOneByOneOrderList();
+        }
+
+        function updateOneByOneOrderList() {
+            const orderList = document.getElementById('order-list');
+            orderList.innerHTML = '';
+            
+            presentationStudents.forEach((student, index) => {
+                const orderItem = document.createElement('div');
+                let statusClass = '';
+                let statusIcon = '';
+                let statusText = '';
+                
+                if (index < currentStudentIndex) {
+                    statusClass = 'bg-green-50 border-green-200';
+                    statusIcon = '✅';
+                    statusText = 'Sudah tampil';
+                } else if (index === currentStudentIndex) {
+                    statusClass = 'bg-orange-50 border-orange-300 ring-2 ring-orange-400';
+                    statusIcon = '👆';
+                    statusText = 'Sedang tampil';
+                } else {
+                    statusClass = 'bg-gray-50 border-gray-200';
+                    statusIcon = '⏳';
+                    statusText = 'Menunggu';
+                }
+                
+                orderItem.className = `flex items-center p-3 rounded-lg border-2 ${statusClass} transition-all`;
+                orderItem.innerHTML = `
+                    <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                        ${index + 1}
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-semibold text-gray-800">${student}</div>
+                        <div class="text-sm text-gray-500">${statusText}</div>
+                    </div>
+                    <div class="text-lg">
+                        ${statusIcon}
+                    </div>
+                `;
+                
+                orderList.appendChild(orderItem);
+            });
+            
+            document.getElementById('presentation-result').classList.remove('hidden');
+        }
+
+        function markStudentCompleted(index) {
+            // This function is called when moving to next student
+            // The visual update is handled in updateOneByOneOrderList()
+        }
+
+        function updatePresentationStats() {
+            const remaining = presentationStudents.length - currentStudentIndex;
+            const completed = currentStudentIndex;
+            
+            document.getElementById('remaining-count').textContent = `${remaining} siswa tersisa`;
+            document.getElementById('completed-count').textContent = `${completed} siswa sudah tampil`;
+        }
+
+        function resetPresentationOrder() {
+            presentationStudents = [];
+            currentStudentIndex = 0;
+            
+            document.getElementById('presentation-result').classList.add('hidden');
+            document.getElementById('current-student-display').classList.add('hidden');
+            document.getElementById('presentation-stats').classList.add('hidden');
+            document.getElementById('start-presentation-btn').classList.remove('hidden');
+            document.getElementById('next-student-btn').classList.add('hidden');
+            
+            // Disable copy button
+            const copyBtn = document.getElementById('copy-order-btn');
+            copyBtn.disabled = true;
+            copyBtn.className += ' opacity-50 cursor-not-allowed';
+        }
+
+        function copyPresentationOrder() {
+            if (presentationStudents.length === 0) {
+                alert('Belum ada urutan yang dibuat!');
+                return;
+            }
+            
+            let result = 'URUTAN TAMPIL SISWA\n';
+            result += '='.repeat(25) + '\n\n';
+            
+            presentationStudents.forEach((student, index) => {
+                const status = index < currentStudentIndex ? ' ✅' : index === currentStudentIndex ? ' 👆' : '';
+                result += `${index + 1}. ${student}${status}\n`;
+            });
+            
+            if (presentationMode === 'one-by-one') {
+                result += `\nStatus: ${currentStudentIndex} dari ${presentationStudents.length} sudah tampil`;
+            }
+            
+            navigator.clipboard.writeText(result).then(() => {
+                alert('Urutan tampil berhasil disalin ke clipboard!');
+            }).catch(() => {
+                alert('Gagal menyalin ke clipboard. Silakan salin secara manual.');
+            });
+        }
+
         // Group functions
         function toggleDivisionInput() {
             const method = document.getElementById('division-method').value;
@@ -1172,125 +1442,7 @@
             });
         }
 
-        // Form Rancangan functions
-        function showFormRancangan() {
-            navigateToPage('form-rancangan');
-        }
 
-        function submitRancangan(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = {
-                namaKegiatan: document.getElementById('nama-kegiatan').value,
-                jenisKegiatan: document.getElementById('jenis-kegiatan').value,
-                deskripsiKegiatan: document.getElementById('deskripsi-kegiatan').value,
-                tanggalMulai: document.getElementById('tanggal-mulai').value,
-                tanggalSelesai: document.getElementById('tanggal-selesai').value,
-                waktuPelaksanaan: document.getElementById('waktu-pelaksanaan').value,
-                tempatPelaksanaan: document.getElementById('tempat-pelaksanaan').value,
-                penanggungJawab: document.getElementById('penanggung-jawab').value,
-                targetPeserta: document.getElementById('target-peserta').value,
-                estimasiBiaya: document.getElementById('estimasi-biaya').value,
-                saranaPrasarana: document.getElementById('sarana-prasarana').value,
-                rencanaKegiatan: document.getElementById('rencana-kegiatan').value,
-                indikatorKeberhasilan: document.getElementById('indikator-keberhasilan').value
-            };
-            
-            // Show loading state
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="text-2xl mr-2">⏳</span>MENYIMPAN...';
-            submitBtn.disabled = true;
-            
-            // Simulate saving process
-            setTimeout(() => {
-                // Create downloadable document
-                const docContent = generateRancanganDocument(formData);
-                downloadRancangan(docContent, formData.namaKegiatan);
-                
-                // Reset form
-                document.getElementById('rancangan-form').reset();
-                
-                // Show success message
-                alert('Rancangan kegiatan berhasil disimpan dan diunduh!');
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        }
-
-        function generateRancanganDocument(data) {
-            const formatCurrency = (amount) => {
-                if (!amount) return 'Tidak ditentukan';
-                return new Intl.NumberFormat('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR'
-                }).format(amount);
-            };
-
-            const formatDate = (dateString) => {
-                if (!dateString) return 'Tidak ditentukan';
-                const date = new Date(dateString);
-                return date.toLocaleDateString('id-ID', {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
-            };
-
-            return `
-RANCANGAN KEGIATAN KOKURIKULER
-SMP NEGERI 2 MANGGAR
-${'='.repeat(50)}
-
-INFORMASI DASAR
-• Nama Kegiatan: ${data.namaKegiatan}
-• Jenis Kegiatan: ${data.jenisKegiatan}
-• Penanggung Jawab: ${data.penanggungJawab}
-
-DESKRIPSI KEGIATAN
-${data.deskripsiKegiatan}
-
-JADWAL PELAKSANAAN
-• Tanggal Mulai: ${formatDate(data.tanggalMulai)}
-• Tanggal Selesai: ${formatDate(data.tanggalSelesai)}
-• Waktu: ${data.waktuPelaksanaan} WIB
-• Tempat: ${data.tempatPelaksanaan}
-
-TARGET DAN ANGGARAN
-• Target Peserta: ${data.targetPeserta || 'Tidak ditentukan'} siswa
-• Estimasi Biaya: ${formatCurrency(data.estimasiBiaya)}
-
-SARANA DAN PRASARANA
-${data.saranaPrasarana || 'Tidak ada kebutuhan khusus'}
-
-RENCANA KEGIATAN
-${data.rencanaKegiatan || 'Akan disusun lebih lanjut'}
-
-INDIKATOR KEBERHASILAN
-${data.indikatorKeberhasilan || 'Akan ditentukan kemudian'}
-
-${'='.repeat(50)}
-Dibuat pada: ${new Date().toLocaleDateString('id-ID')}
-Oleh: Fahri, S.Pd - Guru Informatika SMP Negeri 2 Manggar
-            `.trim();
-        }
-
-        function downloadRancangan(content, namaKegiatan) {
-            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-            const link = document.createElement('a');
-            const fileName = `Rancangan_${namaKegiatan.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.txt`;
-            
-            link.href = URL.createObjectURL(blob);
-            link.download = fileName;
-            link.click();
-            
-            // Clean up
-            URL.revokeObjectURL(link.href);
-        }
 
         // Initialize animations
         document.addEventListener('DOMContentLoaded', function() {
@@ -1306,5 +1458,5 @@ Oleh: Fahri, S.Pd - Guru Informatika SMP Negeri 2 Manggar
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9840da9cd292d43a',t:'MTc1ODcwMTkzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98411ccf86345542',t:'MTc1ODcwNDY0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

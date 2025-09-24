@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital Informatika SMP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .book-card {
+            transition: all 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .active-tab {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+        }
+        .inactive-tab {
+            background: #f8fafc;
+            color: #64748b;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="hero-bg text-white py-6 sm:py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-2xl sm:text-4xl font-bold mb-2">📚 Perpustakaan Digital Informatika</h1>
+                <p class="text-lg sm:text-xl opacity-90">Koleksi Buku Informatika SMP Kelas VII, VIII, IX</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-1 py-4 overflow-x-auto">
+                <button onclick="showClass('kelas7')" id="tab-kelas7" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap">
+                    Kelas VII
+                </button>
+                <button onclick="showClass('kelas8')" id="tab-kelas8" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
+                    Kelas VIII
+                </button>
+                <button onclick="showClass('kelas9')" id="tab-kelas9" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
+                    Kelas IX
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Kelas VII -->
+        <div id="content-kelas7" class="class-content">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas VII</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas VII</p>
+                        </div>
+                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75')" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                            ⬇️ Download
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <iframe src="https://drive.google.com/file/d/1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75/preview" 
+                            class="w-full h-96 sm:h-screen rounded-lg border"
+                            onerror="this.style.display='none'; document.getElementById('error-kelas7').style.display='block';">
+                    </iframe>
+                    <div id="error-kelas7" class="hidden text-center py-8">
+                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
+                        <button onclick="window.open('https://drive.google.com/file/d/1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75/view', '_blank')" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                            🔗 Buka di Google Drive
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kelas VIII -->
+        <div id="content-kelas8" class="class-content hidden">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas VIII</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas VIII</p>
+                        </div>
+                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx')" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                            ⬇️ Download
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <iframe src="https://drive.google.com/file/d/1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx/preview" 
+                            class="w-full h-96 sm:h-screen rounded-lg border"
+                            onerror="this.style.display='none'; document.getElementById('error-kelas8').style.display='block';">
+                    </iframe>
+                    <div id="error-kelas8" class="hidden text-center py-8">
+                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
+                        <button onclick="window.open('https://drive.google.com/file/d/1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx/view', '_blank')" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                            🔗 Buka di Google Drive
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kelas IX -->
+        <div id="content-kelas9" class="class-content hidden">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas IX</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas IX</p>
+                        </div>
+                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg')" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                            ⬇️ Download
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <iframe src="https://drive.google.com/file/d/1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg/preview" 
+                            class="w-full h-96 sm:h-screen rounded-lg border"
+                            onerror="this.style.display='none'; document.getElementById('error-kelas9').style.display='block';">
+                    </iframe>
+                    <div id="error-kelas9" class="hidden text-center py-8">
+                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
+                        <button onclick="window.open('https://drive.google.com/file/d/1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg/view', '_blank')" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                            🔗 Buka di Google Drive
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script>
+        function showClass(className) {
+            // Sembunyikan semua konten
+            const contents = document.querySelectorAll('.class-content');
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            // Tampilkan konten yang dipilih
+            document.getElementById(`content-${className}`).classList.remove('hidden');
+            
+            // Update tab styling
+            const tabs = document.querySelectorAll('[id^="tab-"]');
+            tabs.forEach(tab => {
+                tab.className = 'px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap';
+            });
+            
+            document.getElementById(`tab-${className}`).className = 'px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap';
+        }
+
+        function downloadBook(url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98423cb8c7e5fd63',t:'MTc1ODcxNjQ0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Perencanaan Tim dan Kegiatan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .form-container {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 25px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #8e44ad;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 4px rgba(142, 68, 173, 0.2);
+        }
+        
+        .section-number {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .section-number:hover {
+            transform: scale(1.1) rotate(360deg);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .subsection {
+            margin-bottom: 25px;
+        }
+        
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #fadbd8;
+            text-shadow: 0 1px 2px rgba(231, 76, 60, 0.2);
+            position: relative;
+        }
+        
+        .subsection-title::before {
+            content: '▶';
+            color: #e74c3c;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e8f4f8;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+        
+        .form-input:hover, .form-textarea:hover {
+            border-color: #3498db;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+        }
+        
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+        }
+        
+        .form-textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .form-textarea.large {
+            min-height: 120px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .team-grid .form-group {
+            background: linear-gradient(135deg, #fff5f5 0%, #f0f9ff 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-grid .form-group::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9, #3498db);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .team-grid .form-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+            border-color: #3498db;
+        }
+        
+        /* Special styling for team leader and members */
+        .team-leader-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2px solid #f39c12;
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .team-leader-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f39c12, #e67e22, #f39c12);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        .team-leader-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.3);
+        }
+        
+        .team-leader-label {
+            color: #d68910 !important;
+            font-weight: 700 !important;
+            font-size: 16px !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .team-leader-input {
+            background: linear-gradient(135deg, #ffffff 0%, #fef9e7 100%) !important;
+            border: 2px solid #f7dc6f !important;
+            font-weight: 600;
+            color: #b7950b;
+        }
+        
+        .team-leader-input:focus {
+            border-color: #f39c12 !important;
+            box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2) !important;
+        }
+        
+        .team-members-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d5f4e6 100%);
+            border: 2px solid #27ae60;
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .team-members-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #27ae60, #2ecc71, #27ae60);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        .team-members-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(39, 174, 96, 0.3);
+        }
+        
+        .team-members-label {
+            color: #1e8449 !important;
+            font-weight: 700 !important;
+            font-size: 16px !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .team-members-textarea {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fff4 100%) !important;
+            border: 2px solid #82e0aa !important;
+            font-weight: 500;
+            color: #196f3d;
+            min-height: 100px !important;
+        }
+        
+        .team-members-textarea:focus {
+            border-color: #27ae60 !important;
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2) !important;
+        }
+        
+        .timeline-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #e74c3c;
+            margin-bottom: 15px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(8px) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            border-left-color: #3498db;
+        }
+        
+        .timeline-item:hover::after {
+            opacity: 1;
+        }
+        
+        .timeline-label {
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 8px;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 18px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .checkbox-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(46, 204, 113, 0.08) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .checkbox-item:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-color: #3498db;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+            transform: translateY(-3px);
+        }
+        
+        .checkbox-item:hover::before {
+            opacity: 1;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-top: 2px;
+            transform: scale(1.2);
+            accent-color: #3498db;
+        }
+        
+        .checkbox-content {
+            flex: 1;
+        }
+        
+        .checkbox-title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #2980b9, #3498db);
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn-danger::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-danger:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(231, 76, 60, 0.4);
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+        }
+        
+        .btn-danger:hover::before {
+            left: 100%;
+        }
+        
+        .btn-danger:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm 10mm 15mm 10mm;
+            }
+            
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                font-size: 11px !important;
+                line-height: 1.4 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                background-attachment: local !important;
+            }
+            
+            body::before {
+                display: none !important;
+            }
+            
+            .container {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-width: none !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            .header {
+                background: #2c3e50 !important;
+                background-image: none !important;
+                color: white !important;
+                padding: 15px !important;
+                margin-bottom: 10px !important;
+                page-break-after: avoid;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                box-shadow: none !important;
+            }
+            
+            .header::before {
+                display: none !important;
+            }
+            
+            .header h1 {
+                font-size: 18px !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .header p {
+                font-size: 12px !important;
+            }
+            
+            .form-container {
+                padding: 0 !important;
+            }
+            
+            .section {
+                margin-bottom: 15px !important;
+                padding: 10px !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                border-radius: 0 !important;
+                background: white !important;
+            }
+            
+            .section-title {
+                font-size: 14px !important;
+                margin-bottom: 10px !important;
+                page-break-after: avoid;
+            }
+            
+            .section-number {
+                background: #3498db !important;
+                background-image: none !important;
+                color: white !important;
+                width: 24px !important;
+                height: 24px !important;
+                font-size: 11px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                box-shadow: none !important;
+            }
+            
+            .subsection {
+                margin-bottom: 12px !important;
+                page-break-inside: avoid;
+            }
+            
+            .subsection-title {
+                font-size: 12px !important;
+                margin-bottom: 8px !important;
+                page-break-after: avoid;
+            }
+            
+            .form-group {
+                margin-bottom: 8px !important;
+                page-break-inside: avoid;
+            }
+            
+            .form-label {
+                font-size: 10px !important;
+                margin-bottom: 3px !important;
+                font-weight: 600 !important;
+            }
+            
+            .form-input, .form-textarea {
+                border: 1px solid #333 !important;
+                background: white !important;
+                box-shadow: none !important;
+                padding: 4px 6px !important;
+                font-size: 10px !important;
+                border-radius: 0 !important;
+                -webkit-appearance: none;
+                print-color-adjust: exact;
+            }
+            
+            .form-textarea {
+                min-height: 40px !important;
+            }
+            
+            .form-textarea.large {
+                min-height: 60px !important;
+            }
+            
+            .team-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+                page-break-inside: avoid;
+            }
+            
+            .team-leader-box, .team-members-box {
+                border: 1px solid #333 !important;
+                background: white !important;
+                padding: 8px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+            }
+            
+            .timeline-item {
+                background: white !important;
+                background-image: none !important;
+                border: 1px solid #ddd !important;
+                border-left: 3px solid #e74c3c !important;
+                padding: 8px !important;
+                margin-bottom: 6px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .timeline-item::after {
+                display: none !important;
+            }
+            
+            .timeline-label {
+                font-size: 10px !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .checkbox-group {
+                gap: 6px !important;
+            }
+            
+            .checkbox-item {
+                background: white !important;
+                border: 1px solid #ddd !important;
+                padding: 6px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                display: flex !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .checkbox-group {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 4px !important;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+            
+            .checkbox-content {
+                display: block !important;
+            }
+            
+            .checkbox-title {
+                font-size: 10px !important;
+            }
+            
+            .actions {
+                display: none !important;
+            }
+            
+            /* Prevent orphans and widows */
+            h1, h2, h3, .section-title, .subsection-title, .timeline-label {
+                page-break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Ensure sections don't break awkwardly */
+            .section:nth-child(1) {
+                page-break-before: avoid;
+            }
+            
+            .section:nth-child(2) {
+                page-break-before: auto;
+            }
+            
+            .section:nth-child(3) {
+                page-break-before: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Form Perencanaan Tim dan Kegiatan</h1>
+            <p>Dokumen Perencanaan Kegiatan Kokurikuler</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="planningForm">
+                <!-- Section I: Perencanaan Tim dan Kegiatan -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">I</span>
+                        Perencanaan Tim dan Kegiatan
+                    </h2>
+                    
+                    <!-- Struktur Tim -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Struktur Tim</h3>
+                        
+                        <!-- Ketua Tim - Full Width -->
+                        <div class="form-group team-leader-box">
+                            <label class="form-label team-leader-label">Ketua Tim:</label>
+                            <input type="text" class="form-input team-leader-input" name="ketua_tim" placeholder="Nama Ketua Tim" value="HAMSIAH, S.Pd.Mat">
+                        </div>
+                        
+                        <!-- Anggota Tim - Full Width -->
+                        <div class="form-group team-members-box">
+                            <label class="form-label team-members-label">Anggota Tim:</label>
+                            <textarea class="form-textarea team-members-textarea" name="anggota_tim" placeholder="Daftar nama anggota tim (pisahkan dengan enter untuk setiap anggota)">1. Sastra Suhaimi
+2. Apririan Pabelin, S.Pd
+3. Fahri, S.Pd.Gr</textarea>
+                        </div>
+                        
+                        <!-- Program Kegiatan -->
+                        <div class="form-group">
+                            <label class="form-label">Program Kegiatan (pilih salah satu):</label>
+                            <div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+                                <div class="radio-item" style="flex: none; padding: 12px 16px; cursor: pointer; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #2196f3; border-radius: 12px; transition: all 0.3s ease;">
+                                    <input type="radio" id="program_7kaih" name="program_kegiatan" value="7KAIH" style="cursor: pointer; margin-right: 8px;">
+                                    <label for="program_7kaih" style="cursor: pointer; font-weight: 500;">🌟 7KAIH</label>
+                                </div>
+                                <div class="radio-item" style="flex: none; padding: 12px 16px; cursor: pointer; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 2px solid #9c27b0; border-radius: 12px; transition: all 0.3s ease;">
+                                    <input type="radio" id="program_kewirausahaan" name="program_kegiatan" value="Kewirausahaan" style="cursor: pointer; margin-right: 8px;">
+                                    <label for="program_kewirausahaan" style="cursor: pointer; font-weight: 500;">💼 Kewirausahaan</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Koordinator - Grid Layout -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <!-- Box Koordinator 7KAIH -->
+                            <div class="form-group" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #2196f3; border-radius: 12px; padding: 20px;">
+                                <h4 style="color: #1565c0; font-weight: 700; margin-bottom: 15px; text-align: center; font-size: 16px;">🌟 Koordinator 7KAIH</h4>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <label class="form-label" style="color: #1565c0; font-weight: 600;">Koordinator 1:</label>
+                                    <input type="text" class="form-input" name="koordinator_1_7kaih" placeholder="Nama Koordinator 1 7KAIH" value="Nur Kholifah, S.Pd" style="background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%); border: 2px solid #42a5f5;">
+                                </div>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <label class="form-label" style="color: #1565c0; font-weight: 600;">Koordinator 2:</label>
+                                    <input type="text" class="form-input" name="koordinator_2_7kaih" placeholder="Nama Koordinator 2 7KAIH" value="Febriyanti Ananda Putri, S.Pd" style="background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%); border: 2px solid #42a5f5;">
+                                </div>
+                                
+                                <div>
+                                    <label class="form-label" style="color: #1565c0; font-weight: 600;">Koordinator 3:</label>
+                                    <input type="text" class="form-input" name="koordinator_3_7kaih" placeholder="Nama Koordinator 3 7KAIH" value="Olanda Dwi Sumintra, S.Pd" style="background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%); border: 2px solid #42a5f5;">
+                                </div>
+                            </div>
+                            
+                            <!-- Box Koordinator KWU -->
+                            <div class="form-group" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 2px solid #9c27b0; border-radius: 12px; padding: 20px;">
+                                <h4 style="color: #7b1fa2; font-weight: 700; margin-bottom: 15px; text-align: center; font-size: 16px;">💼 Koordinator KWU</h4>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <label class="form-label" style="color: #7b1fa2; font-weight: 600;">Koordinator 1:</label>
+                                    <input type="text" class="form-input" name="koordinator_1_kewirausahaan" placeholder="Nama Koordinator 1 KWU" value="Umi Lestari, S.Pd" style="background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%); border: 2px solid #ba68c8;">
+                                </div>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <label class="form-label" style="color: #7b1fa2; font-weight: 600;">Koordinator 2:</label>
+                                    <input type="text" class="form-input" name="koordinator_2_kewirausahaan" placeholder="Nama Koordinator 2 KWU" value="Sulastri Siahaan, S.Pd" style="background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%); border: 2px solid #ba68c8;">
+                                </div>
+                                
+                                <div>
+                                    <label class="form-label" style="color: #7b1fa2; font-weight: 600;">Koordinator 3:</label>
+                                    <input type="text" class="form-input" name="koordinator_3_kewirausahaan" placeholder="Nama Koordinator 3 KWU" value="Tiwi Srilingi, S.Pd.Gr" style="background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%); border: 2px solid #ba68c8;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tim Pendukung -->
+                        <div class="form-group">
+                            <label class="form-label">Tim Pendukung:</label>
+                            <textarea class="form-textarea" name="tim_pendukung" placeholder="Daftar nama anggota tim pendukung">Tenaga Kependidikan Sekolah</textarea>
+                        </div>
+                        
+                        <!-- Fasilitator -->
+                        <div class="form-group">
+                            <label class="form-label">Fasilitator (pilih satu atau lebih):</label>
+                            <div class="checkbox-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_1" name="fasilitator[]" value="SITI ROMLAH, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">SITI ROMLAH, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_2" name="fasilitator[]" value="ASNAWATI, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">ASNAWATI, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_3" name="fasilitator[]" value="AGUSTINAH, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">AGUSTINAH, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_4" name="fasilitator[]" value="ZAHROTUN SYADZIYAH, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">ZAHROTUN SYADZIYAH, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_5" name="fasilitator[]" value="HANUROH, S.Pd.Fis" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">HANUROH, S.Pd.Fis</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_6" name="fasilitator[]" value="UMI LESTARI, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">UMI LESTARI, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_7" name="fasilitator[]" value="EVA FITRIANTY, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">EVA FITRIANTY, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_8" name="fasilitator[]" value="SUTRA DEWI, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">SUTRA DEWI, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_9" name="fasilitator[]" value="SASTRA SUHAIMI" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">SASTRA SUHAIMI</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_10" name="fasilitator[]" value="MULYANA, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">MULYANA, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_11" name="fasilitator[]" value="MARADONA, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">MARADONA, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_12" name="fasilitator[]" value="SULASTRI SIAHAAN, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">SULASTRI SIAHAAN, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_13" name="fasilitator[]" value="FEBRIYANTI ANANDA PUTRI, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">FEBRIYANTI ANANDA PUTRI, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_14" name="fasilitator[]" value="NUR KHOLIFAH, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">NUR KHOLIFAH, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_15" name="fasilitator[]" value="RAHAYU MARISA, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">RAHAYU MARISA, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_16" name="fasilitator[]" value="OLANDA DWI SUMINTRA, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">OLANDA DWI SUMINTRA, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_17" name="fasilitator[]" value="M. FIKRI SAPUTRA, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">M. FIKRI SAPUTRA, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_18" name="fasilitator[]" value="APRIRIAN PABELIN, S.Pd" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">APRIRIAN PABELIN, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_19" name="fasilitator[]" value="FAHRI, S.Pd.Gr">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">FAHRI, S.Pd.Gr</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_20" name="fasilitator[]" value="TIWI SRILINGI, S.Pd.Gr" checked>
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">TIWI SRILINGI, S.Pd.Gr</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_21" name="fasilitator[]" value="NILATUL FARERAH, S.Pd">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">NILATUL FARERAH, S.Pd</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_22" name="fasilitator[]" value="DEDE MEZAWA">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">DEDE MEZAWA</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="fasilitator_23" name="fasilitator[]" value="MUNZIL KHARIS, S.Pd">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">MUNZIL KHARIS, S.Pd</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Analisis Kebutuhan -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Analisis Kebutuhan</h3>
+                        <div class="form-group">
+                            <label class="form-label">Analisis mengenai dimensi profil lulusan yang ingin dikuatkan, minat siswa, sumber daya sekolah, dan kondisi kontekstual:</label>
+                            <textarea class="form-textarea large" name="analisis_kebutuhan" placeholder="Jelaskan analisis kebutuhan secara detail..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Tujuan -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Tujuan</h3>
+                        <div class="form-group">
+                            <label class="form-label">Penjelasan tentang tujuan yang ingin dicapai melalui kegiatan ini:</label>
+                            <textarea class="form-textarea large" name="tujuan" placeholder="Jelaskan tujuan kegiatan..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Tema -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Tema</h3>
+                        <div class="form-group">
+                            <label class="form-label">Tema yang dipilih untuk kegiatan kokurikuler:</label>
+                            <input type="text" class="form-input" name="tema" placeholder="Masukkan tema kegiatan">
+                        </div>
+                    </div>
+                    
+                    <!-- Dimensi Profil Lulusan -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Dimensi Profil Lulusan yang Relevan</h3>
+                        <div class="form-group">
+                            <label class="form-label">Pilih dimensi profil lulusan yang akan dikuatkan:</label>
+                            <div class="checkbox-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="keimanan" name="dimensi_profil[]" value="keimanan">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">🙏 Keimanan dan Ketakwaan</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="kewargaan" name="dimensi_profil[]" value="kewargaan">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">🇮🇩 Kewargaan</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="penalaran" name="dimensi_profil[]" value="penalaran">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">🧠 Penalaran Kritis</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="kreativitas" name="dimensi_profil[]" value="kreativitas">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">🎨 Kreativitas</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="kolaborasi" name="dimensi_profil[]" value="kolaborasi">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">🤝 Kolaborasi</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="kemandirian" name="dimensi_profil[]" value="kemandirian">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">💪 Kemandirian</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="kesehatan" name="dimensi_profil[]" value="kesehatan">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">❤️ Kesehatan</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="komunikasi" name="dimensi_profil[]" value="komunikasi">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">💬 Komunikasi</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mata Pelajaran -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Mata Pelajaran yang Relevan</h3>
+                        <div class="form-group">
+                            <label class="form-label">Daftar mata pelajaran yang terintegrasi dengan kegiatan:</label>
+                            <textarea class="form-textarea" name="mata_pelajaran" placeholder="Sebutkan mata pelajaran yang relevan..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Narasumber Ahli atau Mitra -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Narasumber Ahli atau Mitra</h3>
+                        <div class="form-group">
+                            <label class="form-label">Daftar narasumber ahli atau mitra yang akan terlibat dalam kegiatan:</label>
+                            <textarea class="form-textarea" name="narasumber_mitra" placeholder="Sebutkan nama narasumber ahli atau mitra, bidang keahlian, dan perannya dalam kegiatan..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Bentuk Kegiatan -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Bentuk Kegiatan</h3>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="kaih" name="bentuk_kegiatan[]" value="7_kaih">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-title">1. Gerakan 7 Kebiasaan Anak Indonesia Hebat (7 KAIH)</div>
+                                    <textarea class="form-textarea" name="kaih_detail" placeholder="Jelaskan detail kegiatan 7 KAIH..."></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="plb" name="bentuk_kegiatan[]" value="plb">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-title">2. Pembelajaran Kolaboratif Lintas Disiplin Ilmu (PLB)</div>
+                                    <textarea class="form-textarea" name="plb_detail" placeholder="Jelaskan detail kegiatan PLB..."></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="lainnya" name="bentuk_kegiatan[]" value="lainnya">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-title">3. Lainnya:</div>
+                                    <textarea class="form-textarea" name="lainnya_detail" placeholder="Jelaskan bentuk kegiatan lainnya..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section II: Pengelolaan Alokasi Waktu dan Timeline -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">II</span>
+                        Pengelolaan Alokasi Waktu dan Timeline
+                    </h2>
+                    
+                    <!-- Alokasi Waktu -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Alokasi Waktu</h3>
+                        <div class="form-group">
+                            <label class="form-label">Jumlah jam atau periode waktu yang dialokasikan:</label>
+                            <input type="text" class="form-input" name="alokasi_waktu" placeholder="Contoh: 20 jam pelajaran / 4 minggu">
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Pelaksanaan -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Timeline Pelaksanaan</h3>
+                        
+                        <!-- Pilihan Periode Waktu -->
+                        <div class="form-group">
+                            <label class="form-label">Pilih periode waktu:</label>
+                            <div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+                                <div class="checkbox-item" style="flex: none; padding: 12px 16px; cursor: pointer;">
+                                    <input type="checkbox" id="periode_hari" name="periode_waktu[]" value="hari" style="cursor: pointer;">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title" style="cursor: pointer;">📅 Hari</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item" style="flex: none; padding: 12px 16px; cursor: pointer;">
+                                    <input type="checkbox" id="periode_minggu" name="periode_waktu[]" value="minggu" style="cursor: pointer;">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title" style="cursor: pointer;">📆 Minggu</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item" style="flex: none; padding: 12px 16px; cursor: pointer;">
+                                    <input type="checkbox" id="periode_bulan" name="periode_waktu[]" value="bulan" style="cursor: pointer;">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title" style="cursor: pointer;">🗓️ Bulan</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Periode ke-1:</label>
+                            <textarea class="form-textarea" name="timeline_1" placeholder="Jelaskan kegiatan pada periode ke-1..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Periode ke-2:</label>
+                            <textarea class="form-textarea" name="timeline_2" placeholder="Jelaskan kegiatan pada periode ke-2..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Periode ke-3:</label>
+                            <textarea class="form-textarea" name="timeline_3" placeholder="Jelaskan kegiatan pada periode ke-3..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Periode ke-4:</label>
+                            <textarea class="form-textarea" name="timeline_4" placeholder="Jelaskan kegiatan pada periode ke-4..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Periode ke-5:</label>
+                            <textarea class="form-textarea" name="timeline_5" placeholder="Jelaskan kegiatan pada periode ke-5..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Periode ke-6:</label>
+                            <textarea class="form-textarea" name="timeline_6" placeholder="Jelaskan kegiatan pada periode ke-6..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section III: Asesmen -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">III</span>
+                        Asesmen
+                    </h2>
+                    
+                    <!-- Asesmen Formatif -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Asesmen Formatif</h3>
+                        
+                        <!-- Metode Asesmen -->
+                        <div class="form-group">
+                            <label class="form-label">Metode Asesmen:</label>
+                            <div class="checkbox-group" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="observasi" name="metode_asesmen[]" value="observasi">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">📋 Observasi</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="proyek" name="metode_asesmen[]" value="proyek">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">📁 Proyek</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="kinerja" name="metode_asesmen[]" value="kinerja">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">⚡ Kinerja</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="refleksi" name="metode_asesmen[]" value="refleksi">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">🤔 Refleksi</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Teknik Asesmen -->
+                        <div class="form-group">
+                            <label class="form-label">Teknik Asesmen:</label>
+                            <div class="checkbox-group" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="rubrik" name="teknik_asesmen[]" value="rubrik_penilaian">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">📊 Rubrik Penilaian</div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="jurnal" name="teknik_asesmen[]" value="jurnal">
+                                    <div class="checkbox-content">
+                                        <div class="checkbox-title">📝 Jurnal</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Detail Asesmen -->
+                        <div class="form-group">
+                            <label class="form-label">Detail Pelaksanaan Asesmen:</label>
+                            <textarea class="form-textarea large" name="detail_asesmen" placeholder="Jelaskan bagaimana observasi, proyek, penilaian kinerja, dan refleksi akan dilaksanakan menggunakan rubrik penilaian dan jurnal..."></textarea>
+                        </div>
+                        
+                        <!-- Instrumen Asesmen -->
+                        <div class="form-group">
+                            <label class="form-label">Instrumen Asesmen:</label>
+                            <input type="text" class="form-input" name="instrumen_asesmen" placeholder="Contoh: Terlampir" value="Terlampir">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section IV: Refleksi dan Evaluasi -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">IV</span>
+                        Refleksi dan Evaluasi
+                    </h2>
+                    
+                    <!-- Refleksi Kegiatan -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Refleksi Kegiatan</h3>
+                        <div class="form-group">
+                            <label class="form-label">Rencana refleksi terhadap proses dan hasil kegiatan:</label>
+                            <textarea class="form-textarea large" name="refleksi_kegiatan" placeholder="Jelaskan bagaimana refleksi akan dilakukan, siapa yang terlibat, dan kapan dilaksanakan..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Evaluasi Program -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Evaluasi Program</h3>
+                        <div class="form-group">
+                            <label class="form-label">Metode evaluasi program kegiatan kokurikuler:</label>
+                            <textarea class="form-textarea large" name="evaluasi_program" placeholder="Jelaskan metode evaluasi, indikator keberhasilan, dan tindak lanjut yang akan dilakukan..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Tindak Lanjut -->
+                    <div class="subsection">
+                        <h3 class="subsection-title">Tindak Lanjut</h3>
+                        <div class="form-group">
+                            <label class="form-label">Rencana tindak lanjut berdasarkan hasil evaluasi:</label>
+                            <textarea class="form-textarea large" name="tindak_lanjut" placeholder="Jelaskan rencana perbaikan dan pengembangan untuk kegiatan selanjutnya..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Actions -->
+                <div class="actions">
+                    <button type="button" class="btn btn-primary" onclick="printForm()">
+                        🖨️ Cetak Form
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-save functionality
+        function saveFormData() {
+            const formData = {};
+            const form = document.getElementById('planningForm');
+            
+            // Save text inputs and textareas
+            const inputs = form.querySelectorAll('input[type="text"], textarea');
+            inputs.forEach(input => {
+                formData[input.name] = input.value;
+            });
+            
+            // Save checkboxes
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.name) {
+                    if (!formData[checkbox.name]) {
+                        formData[checkbox.name] = [];
+                    }
+                    if (checkbox.checked) {
+                        formData[checkbox.name].push(checkbox.value);
+                    }
+                }
+            });
+            
+            localStorage.setItem('planningFormData', JSON.stringify(formData));
+        }
+        
+        function loadFormData() {
+            const savedData = localStorage.getItem('planningFormData');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                const form = document.getElementById('planningForm');
+                
+                // Load text inputs and textareas
+                Object.keys(formData).forEach(key => {
+                    const element = form.querySelector(`[name="${key}"]`);
+                    if (element && (element.type === 'text' || element.tagName === 'TEXTAREA')) {
+                        element.value = formData[key];
+                    }
+                });
+                
+                // Load checkboxes
+                const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.name && formData[checkbox.name]) {
+                        checkbox.checked = formData[checkbox.name].includes(checkbox.value);
+                    }
+                });
+            }
+        }
+        
+        // Print form function
+        function printForm() {
+            try {
+                // Try multiple methods to ensure printing works
+                if (window.print) {
+                    window.print();
+                } else {
+                    // Fallback method
+                    document.execCommand('print', false, null);
+                }
+            } catch (error) {
+                // If all else fails, show an alert
+                alert('Silakan gunakan Ctrl+P atau Cmd+P untuk mencetak halaman ini');
+            }
+        }
+        
+
+        
+        // Enable/disable textarea based on checkbox
+        document.querySelectorAll('.checkbox-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const textarea = this.closest('.checkbox-item').querySelector('textarea');
+                if (textarea) {
+                    textarea.disabled = !this.checked;
+                    if (!this.checked) {
+                        textarea.value = '';
+                    }
+                }
+            });
+        });
+        
+        // Add click handlers for checkbox items (including period checkboxes)
+        document.querySelectorAll('.checkbox-item').forEach(item => {
+            const checkbox = item.querySelector('input[type="checkbox"]');
+            const title = item.querySelector('.checkbox-title');
+            
+            if (checkbox && title) {
+                // Make the entire item clickable
+                item.addEventListener('click', function(e) {
+                    // Don't trigger if clicking directly on checkbox or textarea
+                    if (e.target.type !== 'checkbox' && e.target.tagName !== 'TEXTAREA' && e.target.tagName !== 'INPUT') {
+                        checkbox.checked = !checkbox.checked;
+                        checkbox.dispatchEvent(new Event('change'));
+                    }
+                });
+                
+                // Make title clickable
+                title.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                });
+            }
+        });
+        
+        // Add click handlers for radio items
+        document.querySelectorAll('.radio-item').forEach(item => {
+            const radio = item.querySelector('input[type="radio"]');
+            
+            if (radio) {
+                // Add hover effects
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+                
+                // Make the entire item clickable
+                item.addEventListener('click', function(e) {
+                    // Don't trigger if clicking directly on radio button or label
+                    if (e.target.type !== 'radio' && e.target.tagName !== 'LABEL') {
+                        radio.checked = true;
+                        radio.dispatchEvent(new Event('change'));
+                    }
+                });
+            }
+        });
+        
+        // Initialize disabled state
+        document.querySelectorAll('.checkbox-item').forEach(item => {
+            const checkbox = item.querySelector('input[type="checkbox"]');
+            const textarea = item.querySelector('textarea');
+            if (textarea && checkbox) {
+                textarea.disabled = !checkbox.checked;
+            }
+        });
+        
+        // Load saved data when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFormData();
+            
+            // Add event listeners for auto-save
+            const form = document.getElementById('planningForm');
+            
+            // Save on input change
+            form.addEventListener('input', function(e) {
+                if (e.target.matches('input, textarea')) {
+                    saveFormData();
+                }
+            });
+            
+            // Save on checkbox change
+            form.addEventListener('change', function(e) {
+                if (e.target.type === 'checkbox') {
+                    saveFormData();
+                }
+            });
+            
+            // Update textarea disabled state after loading data
+            document.querySelectorAll('.checkbox-item').forEach(item => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                const textarea = item.querySelector('textarea');
+                if (textarea && checkbox) {
+                    textarea.disabled = !checkbox.checked;
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9839559d31c70b9e',t:'MTc1ODYyMzA4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

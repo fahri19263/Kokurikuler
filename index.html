@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Digital - Fahri, S.Pd | Guru Informatika SMP Negeri 2 Manggar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        'display': ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         @keyframes fadeInUp {
             from {
@@ -449,13 +464,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <span class="text-xl sm:text-2xl font-bold text-indigo-600">Portal Digital Guru</span>
+                    <span class="text-xl sm:text-2xl font-bold text-indigo-600 font-display">Portal Digital Guru</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#" onclick="showHome()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
                         <a href="#" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Profil Saya</a>
-                        <a href="http://fahri19263.github.io/website/buku.html" target="_blank" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Materi Pelajaran</a>
+                        <a href="https://fahri19263.github.io/website/buku.html" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Materi Pelajaran</a>
                         <a href="#" onclick="showContactModal()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                     </div>
                 </div>
@@ -487,13 +502,12 @@
         <div class="gradient-bg py-12 sm:py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center fade-in-up">
-                    <!-- Profile Photo -->
+                      <!-- Profile Photo -->
                    <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 rounded-full shadow-xl overflow-hidden hidden">
                        <img src="foto-anda.jpg" alt="Foto Profil" class="w-full h-full object-cover">
                    </div>
-                    
                     <!-- Identity -->
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 font-display">
                         Fahri, S.Pd
                     </h1>
                     <p class="text-lg sm:text-xl text-indigo-100 mb-1">
@@ -510,7 +524,7 @@
         <!-- Welcome Section -->
         <div class="py-12 sm:py-16 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 fade-in-up">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 fade-in-up font-display">
                     Selamat Datang di Portal Digital Saya
                 </h2>
                 <p class="text-base sm:text-lg text-gray-600 leading-relaxed fade-in-up">
@@ -522,7 +536,7 @@
         <!-- Main Feature Cards -->
         <div class="py-12 sm:py-16 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12">Fitur Utama Portal</h3>
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display">Fitur Utama Portal</h3>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                     <!-- Kokurikuler Card -->
@@ -531,7 +545,7 @@
                             <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                 <span class="text-3xl sm:text-4xl">🏆</span>
                             </div>
-                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Kokurikuler</h3>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Kokurikuler</h3>
                             <p class="text-purple-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Kelola kegiatan kokurikuler mulai dari perencanaan, pendaftaran, hingga laporan kegiatan siswa.
                             </p>
@@ -547,7 +561,7 @@
                             <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                 <span class="text-3xl sm:text-4xl">🪑</span>
                             </div>
-                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Generator Denah Kelas</h3>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Generator Denah Kelas</h3>
                             <p class="text-blue-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Ciptakan suasana belajar yang baru dan adil. Acak posisi tempat duduk siswa secara otomatis di sini.
                             </p>
@@ -563,7 +577,7 @@
                             <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                 <span class="text-3xl sm:text-4xl">🧩</span>
                             </div>
-                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Pembagi Kelompok Cerdas</h3>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pembagi Kelompok Cerdas</h3>
                             <p class="text-green-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Butuh membagi kelompok untuk tugas atau diskusi? Gunakan alat ini untuk pembagian yang cepat dan adil.
                             </p>
@@ -579,12 +593,149 @@
                             <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                 <span class="text-3xl sm:text-4xl">🎯</span>
                             </div>
-                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Pengacak Urutan Tampil</h3>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pengacak Urutan Tampil</h3>
                             <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
                                 Tentukan urutan siswa maju ke depan secara acak dan adil untuk presentasi atau tugas.
                             </p>
                             <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
                                 Acak Urutan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Section -->
+        <div class="py-12 sm:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display">Games Scratch</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <!-- Platformer Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('platformer-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎮</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Platformer Adventure</h3>
+                            <p class="text-indigo-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Petualangan seru melompati rintangan dan mengumpulkan koin dalam game platformer.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Maze Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('maze-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🌀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Maze Runner</h3>
+                            <p class="text-pink-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Temukan jalan keluar dari labirin yang menantang dengan berbagai level kesulitan.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Maze
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Catch Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('catch-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎯</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Fruit Catcher</h3>
+                            <p class="text-emerald-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tangkap buah-buahan yang jatuh dan hindari bom untuk mendapatkan skor tertinggi.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Tangkap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('scratch-quiz')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🧠</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Scratch Quiz</h3>
+                            <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Kuis interaktif tentang pemrograman Scratch dengan animasi yang menarik.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('snake-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐍</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Snake Classic</h3>
+                            <p class="text-violet-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ular klasik yang dibuat dengan Scratch. Makan makanan dan jangan tabrak dinding!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Snake
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pong Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('pong-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🏓</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pong Retro</h3>
+                            <p class="text-cyan-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ping pong klasik dengan kontrol keyboard. Mainkan melawan komputer!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Pong
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Flappy Bird Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('flappy-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐦</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Flappy Bird</h3>
+                            <p class="text-yellow-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Terbangkan burung melewati pipa-pipa. Game yang menantang dengan kontrol sederhana!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Flappy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Space Shooter Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-slate-600 to-gray-700 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('space-shooter')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🚀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Space Shooter</h3>
+                            <p class="text-slate-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tembak asteroid dan musuh di luar angkasa. Game aksi dengan efek suara keren!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Shooter
                             </button>
                         </div>
                     </div>
@@ -609,7 +760,7 @@
                         <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
                             <span class="text-2xl sm:text-3xl">🏆</span>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4">Kokurikuler</h2>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4 font-display">Kokurikuler</h2>
                         <p class="text-sm sm:text-base text-gray-600">Sistem pengelolaan kegiatan kokurikuler siswa SMP Negeri 2 Manggar</p>
                     </div>
                     
@@ -622,15 +773,15 @@
                             </button>
                         </div>
                         <div class="bg-gradient-to-r from-indigo-400 to-purple-400 p-4 sm:p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-lg sm:text-xl font-bold mb-3">📋 Daftar Peserta</h3>
-                            <p class="mb-4 text-sm sm:text-base">Lihat siswa yang terdaftar dalam kegiatan</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">📋 Form Pendaftaran</h3>
+                            <p class="mb-4 text-sm sm:text-base">Daftarkan siswa untuk kegiatan kokurikuler</p>
                             <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
-                                Lihat Data
+                                Buka Form
                             </button>
                         </div>
                         <div class="bg-gradient-to-r from-blue-400 to-indigo-400 p-4 sm:p-6 rounded-xl text-white card-hover">
-                            <h3 class="text-lg sm:text-xl font-bold mb-3">👨‍🎓 Daftar Fasilitator</h3>
-                            <p class="mb-4 text-sm sm:text-base">Lihat Fasilitator yang mendampingi siswa</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-3">👨‍🎓 Daftar Peserta</h3>
+                            <p class="mb-4 text-sm sm:text-base">Lihat siswa yang terdaftar dalam kegiatan</p>
                             <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Lihat Data
                             </button>
@@ -654,6 +805,143 @@
                             <p class="mb-4 text-sm sm:text-base">Buat laporan dan evaluasi kegiatan</p>
                             <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Buat Laporan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Section -->
+        <div class="py-12 sm:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display">Games Scratch</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <!-- Platformer Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('platformer-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎮</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Platformer Adventure</h3>
+                            <p class="text-indigo-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Petualangan seru melompati rintangan dan mengumpulkan koin dalam game platformer.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Maze Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('maze-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🌀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Maze Runner</h3>
+                            <p class="text-pink-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Temukan jalan keluar dari labirin yang menantang dengan berbagai level kesulitan.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Maze
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Catch Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('catch-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎯</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Fruit Catcher</h3>
+                            <p class="text-emerald-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tangkap buah-buahan yang jatuh dan hindari bom untuk mendapatkan skor tertinggi.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Tangkap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('scratch-quiz')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🧠</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Scratch Quiz</h3>
+                            <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Kuis interaktif tentang pemrograman Scratch dengan animasi yang menarik.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('snake-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐍</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Snake Classic</h3>
+                            <p class="text-violet-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ular klasik yang dibuat dengan Scratch. Makan makanan dan jangan tabrak dinding!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Snake
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pong Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('pong-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🏓</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pong Retro</h3>
+                            <p class="text-cyan-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ping pong klasik dengan kontrol keyboard. Mainkan melawan komputer!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Pong
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Flappy Bird Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('flappy-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐦</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Flappy Bird</h3>
+                            <p class="text-yellow-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Terbangkan burung melewati pipa-pipa. Game yang menantang dengan kontrol sederhana!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Flappy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Space Shooter Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-slate-600 to-gray-700 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('space-shooter')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🚀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Space Shooter</h3>
+                            <p class="text-slate-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tembak asteroid dan musuh di luar angkasa. Game aksi dengan efek suara keren!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Shooter
                             </button>
                         </div>
                     </div>
@@ -783,6 +1071,143 @@
                 </div>
             </div>
         </div>
+
+        <!-- Games Section -->
+        <div class="py-12 sm:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display">Games Scratch</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <!-- Platformer Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('platformer-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎮</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Platformer Adventure</h3>
+                            <p class="text-indigo-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Petualangan seru melompati rintangan dan mengumpulkan koin dalam game platformer.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Maze Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('maze-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🌀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Maze Runner</h3>
+                            <p class="text-pink-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Temukan jalan keluar dari labirin yang menantang dengan berbagai level kesulitan.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Maze
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Catch Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('catch-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎯</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Fruit Catcher</h3>
+                            <p class="text-emerald-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tangkap buah-buahan yang jatuh dan hindari bom untuk mendapatkan skor tertinggi.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Tangkap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('scratch-quiz')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🧠</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Scratch Quiz</h3>
+                            <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Kuis interaktif tentang pemrograman Scratch dengan animasi yang menarik.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('snake-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐍</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Snake Classic</h3>
+                            <p class="text-violet-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ular klasik yang dibuat dengan Scratch. Makan makanan dan jangan tabrak dinding!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Snake
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pong Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('pong-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🏓</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pong Retro</h3>
+                            <p class="text-cyan-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ping pong klasik dengan kontrol keyboard. Mainkan melawan komputer!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Pong
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Flappy Bird Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('flappy-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐦</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Flappy Bird</h3>
+                            <p class="text-yellow-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Terbangkan burung melewati pipa-pipa. Game yang menantang dengan kontrol sederhana!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Flappy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Space Shooter Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-slate-600 to-gray-700 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('space-shooter')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🚀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Space Shooter</h3>
+                            <p class="text-slate-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tembak asteroid dan musuh di luar angkasa. Game aksi dengan efek suara keren!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Shooter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Urutan Tampil Page -->
@@ -884,6 +1309,143 @@
                 </div>
             </div>
         </div>
+
+        <!-- Games Section -->
+        <div class="py-12 sm:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display">Games Scratch</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <!-- Platformer Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('platformer-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎮</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Platformer Adventure</h3>
+                            <p class="text-indigo-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Petualangan seru melompati rintangan dan mengumpulkan koin dalam game platformer.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Maze Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('maze-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🌀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Maze Runner</h3>
+                            <p class="text-pink-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Temukan jalan keluar dari labirin yang menantang dengan berbagai level kesulitan.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Maze
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Catch Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('catch-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎯</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Fruit Catcher</h3>
+                            <p class="text-emerald-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tangkap buah-buahan yang jatuh dan hindari bom untuk mendapatkan skor tertinggi.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Tangkap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('scratch-quiz')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🧠</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Scratch Quiz</h3>
+                            <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Kuis interaktif tentang pemrograman Scratch dengan animasi yang menarik.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('snake-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐍</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Snake Classic</h3>
+                            <p class="text-violet-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ular klasik yang dibuat dengan Scratch. Makan makanan dan jangan tabrak dinding!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Snake
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pong Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('pong-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🏓</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pong Retro</h3>
+                            <p class="text-cyan-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ping pong klasik dengan kontrol keyboard. Mainkan melawan komputer!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Pong
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Flappy Bird Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('flappy-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐦</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Flappy Bird</h3>
+                            <p class="text-yellow-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Terbangkan burung melewati pipa-pipa. Game yang menantang dengan kontrol sederhana!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Flappy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Space Shooter Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-slate-600 to-gray-700 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('space-shooter')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🚀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Space Shooter</h3>
+                            <p class="text-slate-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tembak asteroid dan musuh di luar angkasa. Game aksi dengan efek suara keren!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Shooter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Kelompok Page -->
@@ -961,6 +1523,143 @@
                                 </div>
                                 <div id="groups-container" class="space-y-4"></div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Section -->
+        <div class="py-12 sm:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display">Games Scratch</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <!-- Platformer Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('platformer-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎮</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Platformer Adventure</h3>
+                            <p class="text-indigo-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Petualangan seru melompati rintangan dan mengumpulkan koin dalam game platformer.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Maze Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('maze-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🌀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Maze Runner</h3>
+                            <p class="text-pink-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Temukan jalan keluar dari labirin yang menantang dengan berbagai level kesulitan.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Maze
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Catch Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('catch-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎯</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Fruit Catcher</h3>
+                            <p class="text-emerald-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tangkap buah-buahan yang jatuh dan hindari bom untuk mendapatkan skor tertinggi.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Tangkap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('scratch-quiz')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🧠</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Scratch Quiz</h3>
+                            <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Kuis interaktif tentang pemrograman Scratch dengan animasi yang menarik.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('snake-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐍</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Snake Classic</h3>
+                            <p class="text-violet-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ular klasik yang dibuat dengan Scratch. Makan makanan dan jangan tabrak dinding!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Snake
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pong Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('pong-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🏓</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pong Retro</h3>
+                            <p class="text-cyan-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Game ping pong klasik dengan kontrol keyboard. Mainkan melawan komputer!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Pong
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Flappy Bird Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('flappy-game')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🐦</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Flappy Bird</h3>
+                            <p class="text-yellow-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Terbangkan burung melewati pipa-pipa. Game yang menantang dengan kontrol sederhana!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Flappy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Space Shooter Game Card -->
+                    <div class="card-hover bg-gradient-to-br from-slate-600 to-gray-700 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('space-shooter')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🚀</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Space Shooter</h3>
+                            <p class="text-slate-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tembak asteroid dan musuh di luar angkasa. Game aksi dengan efek suara keren!
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Main Shooter
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1888,5 +2587,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9841a6e0d46cfd2a',t:'MTc1ODcxMDMwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9848d07a452734c9',t:'MTc1ODc4NTQwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

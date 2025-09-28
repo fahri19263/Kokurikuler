@@ -240,21 +240,96 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
             .container {
-                margin: 10px;
+                margin: 0;
                 border-radius: 15px;
             }
             
-            .content {
-                padding: 20px;
-            }
-            
-            .section {
-                padding: 20px;
+            .header {
+                padding: 20px 15px;
             }
             
             .header h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
+                line-height: 1.2;
+            }
+            
+            .content {
+                padding: 15px;
+            }
+            
+            .section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.2em;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .block-list {
+                flex-direction: column;
+                gap: 6px;
+            }
+            
+            .block-item {
+                font-size: 0.8em;
+                padding: 8px 12px;
+                text-align: center;
+            }
+            
+            .flowchart {
+                padding: 15px;
+            }
+            
+            .flowchart-item {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+            
+            .nested {
+                margin-left: 15px;
+            }
+            
+            .double-nested {
+                margin-left: 25px;
+            }
+            
+            .checkbox-item {
+                padding: 12px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .checkbox-item input[type="checkbox"] {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            
+            .checkbox-item label {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+            
+            .progress-text {
+                font-size: 0.9em;
+            }
+            
+            ol, ul {
+                padding-left: 15px;
+            }
+            
+            li {
+                font-size: 0.9em;
+                margin: 6px 0;
             }
         }
     </style>
@@ -495,5 +570,5 @@
         // Initialize progress on page load
         updateProgress();
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98637f1dd5dbea77',t:'MTc1OTA2NTE5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9863f97385c54ac3',t:'MTc1OTA3MDIwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

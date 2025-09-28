@@ -41,7 +41,10 @@
     <div class="bg-white shadow-sm sticky top-0 z-10">
         <div class="container mx-auto px-4">
             <div class="flex justify-center space-x-1 py-4 overflow-x-auto">
-                <button onclick="showClass('kelas7')" id="tab-kelas7" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap">
+                 <button onclick="showClass('koding')" id="tab-koding" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap">
+                    Koding KA
+                </button>
+                <button onclick="showClass('kelas7')" id="tab-kelas7" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
                     Kelas VII
                 </button>
                 <button onclick="showClass('kelas8')" id="tab-kelas8" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
@@ -50,6 +53,7 @@
                 <button onclick="showClass('kelas9')" id="tab-kelas9" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
                     Kelas IX
                 </button>
+               
             </div>
         </div>
     </div>
@@ -57,7 +61,7 @@
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
         <!-- Kelas VII -->
-        <div id="content-kelas7" class="class-content">
+        <div id="content-kelas7" class="class-content hidden">
             <div class="mb-8">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas VII</h2>
             </div>
@@ -157,6 +161,152 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Koding KA -->
+        <div id="content-koding" class="class-content">
+    <div class="header">
+        <h1>🎯 Misi Modul Koding KA</h1>
+        <p>Klik pada setiap misi untuk melihat modul!</p>
+    </div>
+
+    <div class="missions-grid">
+    <div class="mission-card motion" onclick="openModule('https://fahri19263.github.io/website/Misi1Motion.html')">
+        <div class="mission-number">Misi 1</div>
+        <h3 class="mission-title">Motion</h3>
+    </div>
+
+    <div class="mission-card looks-sound" onclick="openModule('https://fahri19263.github.io/website/Misi2Looks&Sound.html')">
+        <div class="mission-number">Misi 2</div>
+        <h3 class="mission-title">Looks & Sound</h3>
+    </div>
+
+    <div class="mission-card event" onclick="openModule('https://fahri19263.github.io/website/Misi3Event.html')">
+        <div class="mission-number">Misi 3</div>
+        <h3 class="mission-title">Event</h3>
+    </div>
+
+    <div class="mission-card control-sensing" onclick="openModule('https://fahri19263.github.io/website/Misi4Control&Sensing.html')">
+        <div class="mission-number">Misi 4</div>
+        <h3 class="mission-title">Control & Sensing</h3>
+    </div>
+
+    <div class="mission-card advanced" onclick="openModule('https://fahri19263.github.io/website/Misi5ControlSensingOperatorVariabel.html')">
+        <div class="mission-number">Misi 5</div>
+        <h3 class="mission-title">Control, Sensing, Operator & Variabel</h3>
+    </div>
+
+    <div class="mission-card variable" onclick="openModule('https://fahri19263.github.io/website/Misi6Variabel.html')">
+        <div class="mission-number">Misi 6</div>
+        <h3 class="mission-title">Variabel</h3>
+    </div>
+</div>
+
+</div>
+
+<style>
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .header p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .missions-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .mission-card {
+        border-radius: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        position: relative;
+        overflow: hidden;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .mission-card.motion {
+        background: linear-gradient(135deg, #4C97FF 0%, #5CB3FF 100%);
+    }
+
+    .mission-card.looks-sound {
+        background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
+    }
+
+    .mission-card.event {
+        background: linear-gradient(135deg, #FFBF00 0%, #FFD700 100%);
+    }
+
+    .mission-card.control-sensing {
+        background: linear-gradient(135deg, #40BF4A 0%, #5CBF66 100%);
+    }
+
+    .mission-card.advanced {
+        background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
+    }
+
+    .mission-card.variable {
+        background: linear-gradient(135deg, #FF8C42 0%, #FFA366 100%);
+    }
+
+    .mission-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    .mission-number {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .mission-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    @media (max-width: 768px) {
+        .missions-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .missions-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    function openModule(url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+</script>
+
+        
     </main>
 
 

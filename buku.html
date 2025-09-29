@@ -42,16 +42,16 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-center space-x-1 py-4 overflow-x-auto">
                  <button onclick="showClass('koding')" id="tab-koding" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap">
-                    Koding
+                    KKA
                 </button>
                 <button onclick="showClass('kelas7')" id="tab-kelas7" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
-                    VII
+                    Kelas VII
                 </button>
                 <button onclick="showClass('kelas8')" id="tab-kelas8" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
-                    VIII
+                    Kelas VIII
                 </button>
                 <button onclick="showClass('kelas9')" id="tab-kelas9" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
-                    IX
+                    Kelas IX
                 </button>
                
             </div>
@@ -166,11 +166,31 @@
         <!-- Koding KA -->
         <div id="content-koding" class="class-content">
     <div class="header">
-        <h1>🎯 Misi Modul Koding</h1>
+        <h1>🎯 Panduan Koding</h1>
         <p>Klik pada setiap misi untuk melihat modul!</p>
     </div>
+            <div class="missions-grid">
 
-    <div class="missions-grid">
+            <!-- Bahan Ajar -->
+<div class="mission-card myblock" onclick="openModule('https://www.canva.com/design/DAG0H4AQNXI/M32jg2k5wEp0oep1BeKXmw/view?utm_content=DAG0H4AQNXI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc9e408ea1c')">
+        <div class="mission-number">Bahan 1</div>
+        <h3 class="mission-title">Mapel Koding KA</h3>
+    </div>
+
+    <div class="mission-card data" onclick="openModule('https://www.canva.com/design/DAG0KbpYiAM/KsMn9WIUuhg5YqliZNsMmw/view?utm_content=DAG0KbpYiAM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4a924f9f5e')">
+        <div class="mission-number">Bahan 2</div>
+        <h3 class="mission-title">Scratch</h3>
+    </div>
+
+    <div class="mission-card ai" onclick="openModule('https://docs.google.com/document/d/1_CMoguM0ctRflc0xK9N6peiReiy37WQ2Ae4w-jzGkNM/edit?usp=sharing')">
+        <div class="mission-number">Bahan 3</div>
+        <h3 class="mission-title">Daftar Fungsi Blok Scratch</h3>
+    </div>
+
+        
+            
+        <!-- Misi -->    
+   
     <div class="mission-card motion" onclick="openModule('https://fahri19263.github.io/website/Misi1Motion.html')">
         <div class="mission-number">Misi 1</div>
         <h3 class="mission-title">Motion</h3>
@@ -200,9 +220,28 @@
         <div class="mission-number">Misi 6</div>
         <h3 class="mission-title">Variabel</h3>
     </div>
-</div>
 
-</div>
+    <!-- Tambahan kotak 7–12 -->
+    <div class="mission-card operator" onclick="openModule('https://fahri19263.github.io/website/Misi7.html')">
+        <div class="mission-number">Misi 7</div>
+        <h3 class="mission-title">⏳</h3>
+    </div>
+
+    <div class="mission-card sensing" onclick="openModule('https://fahri19263.github.io/website/Misi8.html')">
+        <div class="mission-number">Misi 8</div>
+        <h3 class="mission-title">⏳</h3>
+    </div>
+
+    <div class="mission-card extension" onclick="openModule('https://fahri19263.github.io/website/Misi9.html')">
+        <div class="mission-number">Misi 9</div>
+        <h3 class="mission-title">⏳</h3>
+    </div>
+
+    
+
+
+
+
 
 <style>
     .header {
@@ -245,29 +284,56 @@
         color: white;
     }
 
-    .mission-card.motion {
-        background: linear-gradient(135deg, #4C97FF 0%, #5CB3FF 100%);
-    }
+   .mission-card.motion {
+    background: linear-gradient(135deg, #4C97FF 0%, #5CB3FF 100%);
+}
 
-    .mission-card.looks-sound {
-        background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
-    }
+.mission-card.looks-sound {
+    background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
+}
 
-    .mission-card.event {
-        background: linear-gradient(135deg, #FFBF00 0%, #FFD700 100%);
-    }
+.mission-card.event {
+    background: linear-gradient(135deg, #FF8C42 0%, #FFBF00 100%);
+}
 
-    .mission-card.control-sensing {
-        background: linear-gradient(135deg, #40BF4A 0%, #5CBF66 100%);
-    }
+.mission-card.control-sensing {
+    background: linear-gradient(135deg, #40BF4A 0%, #5CBF66 100%);
+}
 
-    .mission-card.advanced {
-        background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
-    }
+.mission-card.advanced {
+    background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
+}
 
-    .mission-card.variable {
-        background: linear-gradient(135deg, #FF8C42 0%, #FFA366 100%);
-    }
+.mission-card.variable {
+    background: linear-gradient(135deg, #FF8C42 0%, #FF8C1A 100%);
+}
+
+.mission-card.operator {
+    background: linear-gradient(135deg, #8A2BE2 0%, #BA55D3 100%);
+}
+
+.mission-card.sensing {
+    background: linear-gradient(135deg, #8A2BE2 0%, #BA55D3 100%);
+}
+
+.mission-card.extension {
+    background: linear-gradient(135deg, #8A2BE2 0%, #BA55D3 100%);
+}
+
+/* Warna baru untuk Misi 10–12 */
+.mission-card.myblock {
+    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* abu tua ke abu kebiruan */
+}
+
+.mission-card.data {
+    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* hijau gelap ke hijau terang */
+}
+
+.mission-card.ai {
+    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* merah marun ke merah bata */
+}
+
+
 
     .mission-card:hover {
         transform: translateY(-10px) scale(1.05);

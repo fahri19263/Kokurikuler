@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital Informatika SMP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .book-card {
+            transition: all 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .active-tab {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+        }
+        .inactive-tab {
+            background: #f8fafc;
+            color: #64748b;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="hero-bg text-white py-6 sm:py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-2xl sm:text-4xl font-bold mb-2">📚 Perpustakaan Digital Informatika</h1>
+                <p class="text-lg sm:text-xl opacity-90">Koleksi Buku Informatika SMP Kelas VII, VIII, IX</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-1 py-4 overflow-x-auto">
+                 <button onclick="showClass('koding')" id="tab-koding" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap">
+                    KKA
+                </button>
+                <button onclick="showClass('kelas7')" id="tab-kelas7" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
+                    VII
+                </button>
+                <button onclick="showClass('kelas8')" id="tab-kelas8" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
+                    VIII
+                </button>
+                <button onclick="showClass('kelas9')" id="tab-kelas9" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
+                    IX
+                </button>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Kelas VII -->
+        <div id="content-kelas7" class="class-content hidden">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas VII</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas VII</p>
+                        </div>
+                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75')" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                            ⬇️ Download
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <iframe src="https://drive.google.com/file/d/1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75/preview" 
+                            class="w-full h-96 sm:h-screen rounded-lg border"
+                            onerror="this.style.display='none'; document.getElementById('error-kelas7').style.display='block';">
+                    </iframe>
+                    <div id="error-kelas7" class="hidden text-center py-8">
+                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
+                        <button onclick="window.open('https://drive.google.com/file/d/1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75/view', '_blank')" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                            🔗 Buka di Google Drive
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kelas VIII -->
+        <div id="content-kelas8" class="class-content hidden">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas VIII</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas VIII</p>
+                        </div>
+                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx')" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                            ⬇️ Download
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <iframe src="https://drive.google.com/file/d/1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx/preview" 
+                            class="w-full h-96 sm:h-screen rounded-lg border"
+                            onerror="this.style.display='none'; document.getElementById('error-kelas8').style.display='block';">
+                    </iframe>
+                    <div id="error-kelas8" class="hidden text-center py-8">
+                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
+                        <button onclick="window.open('https://drive.google.com/file/d/1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx/view', '_blank')" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                            🔗 Buka di Google Drive
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kelas IX -->
+        <div id="content-kelas9" class="class-content hidden">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas IX</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas IX</p>
+                        </div>
+                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg')" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                            ⬇️ Download
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <iframe src="https://drive.google.com/file/d/1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg/preview" 
+                            class="w-full h-96 sm:h-screen rounded-lg border"
+                            onerror="this.style.display='none'; document.getElementById('error-kelas9').style.display='block';">
+                    </iframe>
+                    <div id="error-kelas9" class="hidden text-center py-8">
+                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
+                        <button onclick="window.open('https://drive.google.com/file/d/1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg/view', '_blank')" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                            🔗 Buka di Google Drive
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Koding KA -->
+        <div id="content-koding" class="class-content">
+    <div class="header">
+        <h1>🎯 Panduan Koding</h1>
+        <p>Klik pada setiap misi untuk melihat modul!</p>
+    </div>
+            <div class="missions-grid">
+
+            <!-- Bahan Ajar -->
+<div class="mission-card myblock" onclick="openModule('https://www.canva.com/design/DAG0H4AQNXI/M32jg2k5wEp0oep1BeKXmw/view?utm_content=DAG0H4AQNXI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc9e408ea1c')">
+        <div class="mission-number">Bahan 1</div>
+        <h3 class="mission-title">Mapel Koding KA</h3>
+    </div>
+
+    <div class="mission-card data" onclick="openModule('https://www.canva.com/design/DAG0KbpYiAM/KsMn9WIUuhg5YqliZNsMmw/view?utm_content=DAG0KbpYiAM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4a924f9f5e')">
+        <div class="mission-number">Bahan 2</div>
+        <h3 class="mission-title">Scratch</h3>
+    </div>
+
+    <div class="mission-card ai" onclick="openModule('https://docs.google.com/document/d/1_CMoguM0ctRflc0xK9N6peiReiy37WQ2Ae4w-jzGkNM/edit?usp=sharing')">
+        <div class="mission-number">Bahan 3</div>
+        <h3 class="mission-title">Daftar Fungsi Blok Scratch</h3>
+    </div>
+
+        
+            
+        <!-- Misi -->    
+   
+    <div class="mission-card motion" onclick="openModule('https://pakfahri.github.io/website/Misi1Motion.html')">
+        <div class="mission-number">Misi 1</div>
+        <h3 class="mission-title">Motion</h3>
+    </div>
+
+    <div class="mission-card looks-sound" onclick="openModule('https://pakfahri.github.io/website/Misi2Looks&Sound.html')">
+        <div class="mission-number">Misi 2</div>
+        <h3 class="mission-title">Looks & Sound</h3>
+    </div>
+
+    <div class="mission-card event" onclick="openModule('https://pakfahri.github.io/website/Misi3Event.html')">
+        <div class="mission-number">Misi 3</div>
+        <h3 class="mission-title">Event</h3>
+    </div>
+
+    <div class="mission-card control-sensing" onclick="openModule('https://pakfahri.github.io/website/Misi4Control&Sensing.html')">
+        <div class="mission-number">Misi 4</div>
+        <h3 class="mission-title">Control & Sensing</h3>
+    </div>
+
+    <div class="mission-card advanced" onclick="openModule('https://pakfahri.github.io/website/Misi5ControlSensingOperatorVariabel.html')">
+        <div class="mission-number">Misi 5</div>
+        <h3 class="mission-title">Control, Sensing, Operator & Variabel</h3>
+    </div>
+
+    <div class="mission-card variable" onclick="openModule('https://pakfahri.github.io/website/Misi6koding.html')">
+        <div class="mission-number">Misi 6</div>
+        <h3 class="mission-title">Control, Sensing, Operator & Variabel</h3>
+    </div>
+
+    <!-- Tambahan kotak 7–12 -->
+    <div class="mission-card operator" onclick="openModule('https://pakfahri.github.io/website/Misi7Variabel.html')">
+        <div class="mission-number">Misi 7</div>
+        <h3 class="mission-title">Variabel</h3>
+    </div>
+
+    <div class="mission-card sensing" onclick="openModule('https://docs.google.com/document/d/1dUC0UC-g4PcDm8F2QnHXZaSpGhzVDrYNMR7Pnaw6n84/edit?usp=sharing')">
+        <div class="mission-number">Extra</div>
+        <h3 class="mission-title">Broadcast, Video Sensing & Clone</h3>
+    </div>
+
+    <div class="mission-card extension" onclick="openModule('https://docs.google.com/forms/d/e/1FAIpQLScPunGfZTniJ3V9VITxHJKvK4uMtWTCu0rna7ifTw70awEYQQ/viewform?usp=header')">
+        <div class="mission-number">Form Karya</div>
+        <h3 class="mission-title">Silakan isi form berikut</h3>
+    </div>
+
+    
+
+
+
+
+
+<style>
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .header p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .missions-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .mission-card {
+        border-radius: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        position: relative;
+        overflow: hidden;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+   .mission-card.motion {
+    background: linear-gradient(135deg, #4C97FF 0%, #5CB3FF 100%);
+}
+
+.mission-card.looks-sound {
+    background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
+}
+
+.mission-card.event {
+    background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
+}
+
+.mission-card.control-sensing {
+    background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
+}
+
+.mission-card.advanced {
+    background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
+}
+
+.mission-card.variable {
+    background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
+}
+
+.mission-card.operator {
+    background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
+}
+
+.mission-card.sensing {
+    background: linear-gradient(135deg, #F0E68C 0%, #996515 100%);
+}
+
+.mission-card.extension {
+    background: linear-gradient(135deg, #DC143C 0%, #000080 100%);
+}
+
+/* Warna baru untuk Misi 10–12 */
+.mission-card.myblock {
+    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* abu tua ke abu kebiruan */
+}
+
+.mission-card.data {
+    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* hijau gelap ke hijau terang */
+}
+
+.mission-card.ai {
+    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* merah marun ke merah bata */
+}
+
+
+
+    .mission-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    .mission-number {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .mission-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    @media (max-width: 768px) {
+        .missions-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .missions-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    function openModule(url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+</script>
+
+        
+    </main>
+
+
+
+    <script>
+        function showClass(className) {
+            // Sembunyikan semua konten
+            const contents = document.querySelectorAll('.class-content');
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            // Tampilkan konten yang dipilih
+            document.getElementById(`content-${className}`).classList.remove('hidden');
+            
+            // Update tab styling
+            const tabs = document.querySelectorAll('[id^="tab-"]');
+            tabs.forEach(tab => {
+                tab.className = 'px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap';
+            });
+            
+            document.getElementById(`tab-${className}`).className = 'px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap';
+        }
+
+        function downloadBook(url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98423cb8c7e5fd63',t:'MTc1ODcxNjQ0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

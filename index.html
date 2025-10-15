@@ -22,6 +22,40 @@
     </script>
     <style>
 
+        /* Fixed Mobile Menu Styles */
+#mobile-menu {
+    max-height: calc(100vh - 64px); /* Tinggi viewport minus header */
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Smooth animation for mobile menu */
+#mobile-menu:not(.hidden) {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Backdrop effect for mobile menu */
+.mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+}
+
 /* 1. ANIMASI KERLIPAN (TWINKLE) */
 @keyframes twinkle {
     0%, 20%, 50%, 80%, 100% { 
@@ -512,41 +546,42 @@
 </head>
 <body class="min-h-screen bg-gray-50">
     <!-- Navigation Header -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <span class="text-xl sm:text-2xl font-bold text-indigo-600 font-display">Portal Digital Guru</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#" onclick="showHome()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="https://pakfahri.github.io/profil/" onclick="toggleMobileMenu()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium attention-grabber">Profil Saya</a>  
-                        <a href="https://pakfahri.github.io/website/buku.html" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Guru Koder</a>
-                        <a href="#" onclick="showContactModal()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-indigo-600 p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+   <!-- Navigation Header -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <span class="text-xl sm:text-2xl font-bold text-indigo-600 font-display">Portal Digital Guru</span>
+            </div>
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="#" onclick="showHome()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                    <a href="https://pakfahri.github.io/profil/" onclick="toggleMobileMenu()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium attention-grabber">Profil Saya</a>  
+                    <a href="https://pakfahri.github.io/website/buku.html" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Guru Koder</a>
+                    <a href="#" onclick="showContactModal()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 </div>
             </div>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" onclick="showHome(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Beranda</a>
-                <a href="https://pakfahri.github.io/profil/" onclick="toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium attention-grabber">Profil Saya</a>
-                <a href="https://pakfahri.github.io/website/buku.html" onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Guru Koder</a>
-                <a href="#" onclick="showContactModal(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Kontak</a>
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-indigo-600 p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
+    
+    <!-- Mobile menu - POSITION FIXED -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-50 shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
+            <a href="#" onclick="showHome(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Beranda</a>
+            <a href="https://pakfahri.github.io/profil/" onclick="toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium attention-grabber">Profil Saya</a>
+            <a href="https://pakfahri.github.io/website/buku.html" onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Guru Koder</a>
+            <a href="#" onclick="showContactModal(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Kontak</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Home Page -->
     <div id="home-page">
@@ -658,7 +693,7 @@
         </div>
 
         <!-- Games Section -->
-<div class="py-12 sm:py-16 bg-white">
+<div class="py-1 sm:py-1 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display cursor-pointer hover:text-indigo-600" 
             onclick="toggleGames()">
@@ -1269,11 +1304,20 @@ function toggleGames() {
         gamesArrow.textContent = '▲';
     }
 }
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        }
+      // Mobile menu toggle - FIXED VERSION
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+    
+    mobileMenu.classList.toggle('hidden');
+    
+    // Prevent body scroll when menu is open
+    if (!mobileMenu.classList.contains('hidden')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
+}
 
 
 

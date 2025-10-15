@@ -3,401 +3,1411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Digital Informatika SMP</title>
+    <title>Portal Digital - Fahri, S.Pd | Guru Informatika SMP Negeri 2 Manggar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .book-card {
-            transition: all 0.3s ease;
-        }
-        .book-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .active-tab {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-            color: white;
-        }
-        .inactive-tab {
-            background: #f8fafc;
-            color: #64748b;
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-        }
-    </style>
-</head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="hero-bg text-white py-6 sm:py-8">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h1 class="text-2xl sm:text-4xl font-bold mb-2">Koding</h1>
-                <p class="text-lg sm:text-xl opacity-90">Block-based programming for teachers</p>
-            </div>
-        </div>
-    </header>
-
-   <!-- Navigation Tabs -->
-    <!--<div class="bg-white shadow-sm sticky top-0 z-10">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-center space-x-1 py-4 overflow-x-auto">
-                 <button onclick="showClass('koding')" id="tab-koding" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap">
-                    KKA
-                </button>
-                <button onclick="showClass('kelas7')" id="tab-kelas7" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
-                    VII
-                </button>
-                <button onclick="showClass('kelas8')" id="tab-kelas8" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
-                    VIII
-                </button>
-                <button onclick="showClass('kelas9')" id="tab-kelas9" class="px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap">
-                    IX
-                </button>
-               
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- Kelas VII -->
-       <!-- <div id="content-kelas7" class="class-content hidden">
-            <div class="mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas VII</h2>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="p-6 border-b">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas VII</p>
-                        </div>
-                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75')" 
-                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
-                            ⬇️ Download
-                        </button>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <iframe src="https://drive.google.com/file/d/1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75/preview" 
-                            class="w-full h-96 sm:h-screen rounded-lg border"
-                            onerror="this.style.display='none'; document.getElementById('error-kelas7').style.display='block';">
-                    </iframe>
-                    <div id="error-kelas7" class="hidden text-center py-8">
-                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
-                        <button onclick="window.open('https://drive.google.com/file/d/1Fmvd75nvGbo_SKZNkUesiy4OjJmpEW75/view', '_blank')" 
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
-                            🔗 Buka di Google Drive
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Kelas VIII -->
-        <!--<div id="content-kelas8" class="class-content hidden">
-            <div class="mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas VIII</h2>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="p-6 border-b">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas VIII</p>
-                        </div>
-                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx')" 
-                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
-                            ⬇️ Download
-                        </button>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <iframe src="https://drive.google.com/file/d/1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx/preview" 
-                            class="w-full h-96 sm:h-screen rounded-lg border"
-                            onerror="this.style.display='none'; document.getElementById('error-kelas8').style.display='block';">
-                    </iframe>
-                    <div id="error-kelas8" class="hidden text-center py-8">
-                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
-                        <button onclick="window.open('https://drive.google.com/file/d/1FnLlU4eCBvgFgTt5YzqhK0tiVnTYpigx/view', '_blank')" 
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
-                            🔗 Buka di Google Drive
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Kelas IX -->
-       <!-- <div id="content-kelas9" class="class-content hidden">
-            <div class="mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">📖 Buku Informatika Kelas IX</h2>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="p-6 border-b">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-600">Buku panduan informatika untuk siswa SMP kelas IX</p>
-                        </div>
-                        <button onclick="downloadBook('https://drive.google.com/uc?export=download&id=1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg')" 
-                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
-                            ⬇️ Download
-                        </button>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <iframe src="https://drive.google.com/file/d/1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg/preview" 
-                            class="w-full h-96 sm:h-screen rounded-lg border"
-                            onerror="this.style.display='none'; document.getElementById('error-kelas9').style.display='block';">
-                    </iframe>
-                    <div id="error-kelas9" class="hidden text-center py-8">
-                        <p class="text-gray-600 mb-4">📄 Tidak dapat menampilkan preview buku</p>
-                        <button onclick="window.open('https://drive.google.com/file/d/1Fo1TJXr-IM2axjIVql6OQElQe3_nqPMg/view', '_blank')" 
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
-                            🔗 Buka di Google Drive
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Koding KA -->
-        <div id="content-koding" class="class-content">
-    <div class="header">
-        <!-- <h1>🎯 Panduan Koding</h1>
-        <p>Klik pada setiap misi untuk melihat modul!</p>
-    </div>-->
-            <div class="missions-grid">
-
-            <!-- Bahan Ajar -->
-<div class="mission-card myblock" onclick="openModule('https://www.canva.com/design/DAG0H4AQNXI/M32jg2k5wEp0oep1BeKXmw/view?utm_content=DAG0H4AQNXI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc9e408ea1c')">
-        <div class="mission-number">Bahan 1</div>
-        <h3 class="mission-title">Mapel Koding KA</h3>
-    </div>
-
-    <div class="mission-card data" onclick="openModule('https://www.canva.com/design/DAG0KbpYiAM/KsMn9WIUuhg5YqliZNsMmw/view?utm_content=DAG0KbpYiAM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4a924f9f5e')">
-        <div class="mission-number">Bahan 2</div>
-        <h3 class="mission-title">Scratch</h3>
-    </div>
-
-    <div class="mission-card ai" onclick="openModule('https://docs.google.com/document/d/1_CMoguM0ctRflc0xK9N6peiReiy37WQ2Ae4w-jzGkNM/edit?usp=sharing')">
-        <div class="mission-number">Bahan 3</div>
-        <h3 class="mission-title">Daftar Fungsi Blok Scratch</h3>
-    </div>
-
-        
-            
-        <!-- Misi -->    
-   
-    <div class="mission-card motion" onclick="openModule('https://pakfahri.github.io/website/Misi1Motion.html')">
-        <div class="mission-number">Misi 1</div>
-        <h3 class="mission-title">Motion</h3>
-    </div>
-
-    <div class="mission-card looks-sound" onclick="openModule('https://pakfahri.github.io/website/Misi2Looks&Sound.html')">
-        <div class="mission-number">Misi 2</div>
-        <h3 class="mission-title">Looks & Sound</h3>
-    </div>
-
-    <div class="mission-card event" onclick="openModule('https://pakfahri.github.io/website/Misi3Event.html')">
-        <div class="mission-number">Misi 3</div>
-        <h3 class="mission-title">Event</h3>
-    </div>
-
-    <div class="mission-card control-sensing" onclick="openModule('https://pakfahri.github.io/website/Misi4Control&Sensing.html')">
-        <div class="mission-number">Misi 4</div>
-        <h3 class="mission-title">Control & Sensing</h3>
-    </div>
-
-    <div class="mission-card advanced" onclick="openModule('https://pakfahri.github.io/website/Misi5ControlSensingOperatorVariabel.html')">
-        <div class="mission-number">Misi 5</div>
-        <h3 class="mission-title">Control, Sensing, Operator & Variabel</h3>
-    </div>
-
-    <div class="mission-card variable" onclick="openModule('https://pakfahri.github.io/website/Misi6koding.html')">
-        <div class="mission-number">Misi 6</div>
-        <h3 class="mission-title">Control, Sensing, Operator & Variabel</h3>
-    </div>
-
-    <!-- Tambahan kotak 7–12 -->
-    <div class="mission-card operator" onclick="openModule('https://pakfahri.github.io/website/Misi7Variabel.html')">
-        <div class="mission-number">Misi 7</div>
-        <h3 class="mission-title">Variabel</h3>
-    </div>
-
-    <div class="mission-card sensing" onclick="openModule('https://docs.google.com/document/d/1dUC0UC-g4PcDm8F2QnHXZaSpGhzVDrYNMR7Pnaw6n84/edit?usp=sharing')">
-        <div class="mission-number">Extra</div>
-        <h3 class="mission-title">Broadcast, Video Sensing & Clone</h3>
-    </div>
-
-    <div class="mission-card extension" onclick="openModule('https://docs.google.com/forms/d/e/1FAIpQLScPunGfZTniJ3V9VITxHJKvK4uMtWTCu0rna7ifTw70awEYQQ/viewform?usp=header')">
-        <div class="mission-number">Form Karya</div>
-        <h3 class="mission-title">Silakan isi form berikut</h3>
-    </div>
-
-    
-
-
-
-
-
-<style>
-    .header {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    .header h1 {
-        font-size: 2rem;
-        color: #333;
-    }
-
-    .header p {
-        font-size: 1rem;
-        color: #555;
-    }
-
-    .missions-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .mission-card {
-        border-radius: 20px;
-        padding: 30px 20px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        position: relative;
-        overflow: hidden;
-        min-height: 120px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-    }
-
-   .mission-card.motion {
-    background: linear-gradient(135deg, #4C97FF 0%, #5CB3FF 100%);
-}
-
-.mission-card.looks-sound {
-    background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
-}
-
-.mission-card.event {
-    background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
-}
-
-.mission-card.control-sensing {
-    background: linear-gradient(135deg, #9966FF 0%, #B266FF 100%);
-}
-
-.mission-card.advanced {
-    background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
-}
-
-.mission-card.variable {
-    background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
-}
-
-.mission-card.operator {
-    background: linear-gradient(135deg, #FF6680 0%, #FF8099 100%);
-}
-
-.mission-card.sensing {
-    background: linear-gradient(135deg, #F0E68C 0%, #996515 100%);
-}
-
-.mission-card.extension {
-    background: linear-gradient(135deg, #DC143C 0%, #000080 100%);
-}
-
-/* Warna baru untuk Misi 10–12 */
-.mission-card.myblock {
-    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* abu tua ke abu kebiruan */
-}
-
-.mission-card.data {
-    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* hijau gelap ke hijau terang */
-}
-
-.mission-card.ai {
-    background: linear-gradient(135deg, #2F4F4F 0%, #708090 100%); /* merah marun ke merah bata */
-}
-
-
-
-    .mission-card:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    }
-
-    .mission-number {
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-
-    .mission-title {
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin: 0;
-        line-height: 1.3;
-    }
-
-    @media (max-width: 768px) {
-        .missions-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .missions-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-
-<script>
-    function openModule(url) {
-        window.open(url, '_blank', 'noopener,noreferrer');
-    }
-</script>
-
-        
-    </main>
-
-
-
     <script>
-        function showClass(className) {
-            // Sembunyikan semua konten
-            const contents = document.querySelectorAll('.class-content');
-            contents.forEach(content => content.classList.add('hidden'));
-            
-            // Tampilkan konten yang dipilih
-            document.getElementById(`content-${className}`).classList.remove('hidden');
-            
-            // Update tab styling
-            const tabs = document.querySelectorAll('[id^="tab-"]');
-            tabs.forEach(tab => {
-                tab.className = 'px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 inactive-tab whitespace-nowrap';
-            });
-            
-            document.getElementById(`tab-${className}`).className = 'px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 active-tab whitespace-nowrap';
-        }
-
-        function downloadBook(url) {
-            window.open(url, '_blank', 'noopener,noreferrer');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        'display': ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
         }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98423cb8c7e5fd63',t:'MTc1ODcxNjQ0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <style>
+        /* 1. ANIMASI KERLIPAN (TWINKLE) */
+        @keyframes twinkle {
+            0%, 20%, 50%, 80%, 100% { 
+                opacity: 1; /* Teks terlihat jelas */
+            }
+            40%, 60% { 
+                opacity: 0.3; /* Teks meredup (kerlipan) */
+            }
+        }
+
+        /* 2. ANIMASI PANTULAN HALUS (SOFT-BOUNCE) */
+        @keyframes soft-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* 3. TERAPKAN KEDUA ANIMASI */
+        .attention-grabber {
+            display: inline-block;
+            font-weight: bold;
+            color: #FFD700; /* Warna Emas untuk efek bintang */
+            
+            /* Gabungkan 2 Animasi: Gerak dan Kerlipan */
+            animation: 
+                soft-bounce 1.5s ease-in-out infinite, /* Animasi Gerak Melayang */
+                twinkle 3s ease-out infinite;          /* Animasi Kerlipan Bintang */
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @keyframes shuffle {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .bounce-icon {
+            animation: bounce 2s infinite;
+        }
+        
+        .shuffle-animation {
+            animation: shuffle 0.5s ease-in-out;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .card-hover:hover .card-icon {
+            animation: bounce 0.6s ease-in-out;
+        }
+        
+        .btn-primary {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .seat-grid {
+            display: grid;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .seat {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 1.2;
+            transition: all 0.3s ease;
+        }
+        
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes flyToSeat {
+            0% {
+                opacity: 1;
+                transform: translateX(0) translateY(0) scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateX(var(--fly-x)) translateY(var(--fly-y)) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(var(--fly-x)) translateY(var(--fly-y)) scale(1);
+            }
+        }
+        
+        @keyframes seatPop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .page-transition-enter {
+            animation: slideInFromRight 0.6s ease-out forwards;
+        }
+        
+        .page-transition-exit {
+            animation: slideInFromLeft 0.4s ease-in forwards;
+        }
+        
+        .counter-animation {
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        .icon-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .icon-hover:hover {
+            animation: pulse 0.6s ease-in-out;
+        }
+        
+        .input-focus {
+            transition: all 0.3s ease;
+        }
+        
+        .input-focus:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .result-appear {
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        .classroom-seat {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.1;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+            color: #6b7280;
+            position: relative;
+            overflow: hidden;
+            padding: 1px;
+        }
+        
+        @media (min-width: 480px) {
+            .classroom-seat {
+                width: 50px;
+                height: 50px;
+                font-size: 8px;
+                padding: 2px;
+            }
+        }
+        
+        @media (min-width: 640px) {
+            .classroom-seat {
+                width: 60px;
+                height: 60px;
+                font-size: 9px;
+                line-height: 1.2;
+                border-radius: 8px;
+                padding: 3px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .classroom-seat {
+                width: 70px;
+                height: 70px;
+                font-size: 10px;
+                padding: 4px;
+            }
+        }
+        
+        .classroom-seat.filled {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-color: #93c5fd;
+            color: #1e40af;
+        }
+        
+        .classroom-seat.empty {
+            background: #f3f4f6;
+            border-color: #d1d5db;
+            color: #9ca3af;
+        }
+        
+        /* Mobile overflow fix */
+        @media (max-width: 767px) {
+            html, body {
+                overflow-x: hidden;
+                max-width: 100vw;
+            }
+            
+            * {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .max-w-7xl, .max-w-6xl, .max-w-4xl {
+                max-width: 100vw;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .px-4, .px-6, .px-8 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .sm\:px-6, .sm\:px-8 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            #classroom-grid {
+                max-width: calc(100vw - 2rem);
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+            
+            /* Fix for specific generator pages */
+            #tempat-duduk-page .bg-white,
+            #kelompok-page .bg-white,
+            #urutan-tampil-page .bg-white {
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 100vw;
+                border-radius: 1rem;
+            }
+            
+            /* Fix grid layouts on mobile */
+            .grid {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            /* Fix flex layouts */
+            .flex {
+                flex-wrap: wrap;
+                max-width: 100%;
+            }
+            
+            /* Prevent text overflow */
+            .text-2xl, .text-3xl {
+                word-break: break-word;
+                hyphens: auto;
+            }
+        }
+        
+        .flying-name {
+            position: fixed;
+            z-index: 1000;
+            background: #3b82f6;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            pointer-events: none;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        
+        .seat-pop {
+            animation: seatPop 0.6s ease-out;
+        }
+        
+        @media (max-width: 768px) {
+            .card-hover:hover {
+                transform: translateY(-4px) scale(1.01);
+            }
+            
+            .btn-primary:hover {
+                transform: translateY(-1px) scale(1.01);
+            }
+        }
+
+        /* Enhanced mobile navigation */
+        @media (max-width: 768px) {
+            .nav-mobile {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                border-top: 1px solid #e5e7eb;
+                padding: 8px;
+                z-index: 50;
+            }
+        }
+
+        /* Alert animations */
+        .alert-slide-in {
+            animation: slideInAlert 0.3s ease-out;
+        }
+
+        @keyframes slideInAlert {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Progress bar animation */
+        .progress-animate {
+            transition: width 0.3s ease-out;
+        }
+
+        /* === MODERN GAME SECTION STYLES === */
+        .modern-game-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .modern-game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .modern-game-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .modern-game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+
+        /* Game Icon Styles */
+        .game-icon-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .game-icon {
+            display: inline-flex;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .modern-game-card.adventure .game-icon {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+        }
+
+        .modern-game-card.puzzle .game-icon {
+            background: linear-gradient(135deg, #10b981, #047857);
+        }
+
+        .modern-game-card.arcade .game-icon {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .modern-game-card.education .game-icon {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .modern-game-card.simulation .game-icon {
+            background: linear-gradient(135deg, #ec4899, #be185d);
+        }
+
+        /* Game Text Styles */
+        .game-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .game-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Game Button Styles */
+        .modern-game-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .modern-game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* === PROFESSIONAL KOKURIKULER PAGE STYLES === */
+        .professional-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            font-size: 1.5rem;
+        }
+
+        .page-title {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .page-subtitle {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        .professional-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .professional-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #3b82f6, #1e40af);
+            border-radius: 12px 0 0 12px;
+        }
+
+        .professional-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #e2e8f0;
+        }
+
+        /* Card Category Colors */
+        .professional-card.programming::before {
+            background: linear-gradient(180deg, #3b82f6, #1e40af);
+        }
+
+        .professional-card.tools::before {
+            background: linear-gradient(180deg, #10b981, #047857);
+        }
+
+        .professional-card.literacy::before {
+            background: linear-gradient(180deg, #f59e0b, #d97706);
+        }
+
+        .professional-card.journal::before {
+            background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+        }
+
+        /* Card Content Styles */
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            gap: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1f2937;
+            flex: 1;
+            margin: 0;
+        }
+
+        .card-badge {
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .card-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Professional Button Styles */
+        .professional-btn {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .professional-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Back Button Styles */
+        .modern-back-btn {
+            background: white;
+            color: #374151;
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .modern-back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        /* Expandable Game Section */
+        .expandable-section {
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .expandable-section.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .expandable-section.expanded {
+            max-height: 2000px;
+            opacity: 1;
+        }
+
+        .expand-toggle {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .expand-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .professional-container {
+                padding: 1.5rem;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .professional-card {
+                padding: 1.25rem;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .card-badge {
+                align-self: flex-start;
+            }
+        }
+
+/* === BACKGROUND KARTU GAME SECTION - ABU-ABU SEDANG === */
+.modern-game-card {
+    background: linear-gradient(145deg, #f1f5f9, #e5e7eb);
+}
+
+.modern-game-card:hover {
+    background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+}
+
+/* === BACKGROUND KARTU KOKURIKULER - ABU-ABU SEDANG === */
+.professional-card {
+    background: linear-gradient(145deg, #f1f5f9, #e5e7eb);
+}
+
+.professional-card:hover {
+    background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+}
+
+        /* === CENTER JUDUL & DESKRIPSI KOKURIKULER PAGE === */
+.professional-card .card-header,
+.professional-card .card-title,
+.professional-card .card-description {
+    text-align: center;
+}
+
+.professional-card .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.professional-card .card-badge {
+    align-self: center;
+}
+
+        
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl sm:text-2xl font-bold text-indigo-600 font-display">Portal Digital Guru</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" onclick="showHome()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="https://pakfahri.github.io/profil/" onclick="toggleMobileMenu()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium attention-grabber">Profil Saya</a>  
+                        <a href="https://pakfahri.github.io/website/buku.html" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Guru Koder</a>
+                        <a href="#" onclick="showContactModal()" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-indigo-600 p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="showHome(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Beranda</a>
+                <a href="https://pakfahri.github.io/profil/" onclick="toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium attention-grabber">Profil Saya</a>
+                <a href="https://pakfahri.github.io/website/buku.html" onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Materi Pelajaran</a>
+                <a href="#" onclick="showContactModal(); toggleMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 font-medium">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <!-- Header Section -->
+        <div class="gradient-bg py-12 sm:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-up">
+                    <!-- Profile Photo -->
+                    <div class="mb-6">
+                    </div>
+                    <!-- Identity -->
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 font-display">
+                        Fahri, S.Pd
+                    </h1>
+                    <p class="text-lg sm:text-xl text-indigo-100 mb-1">
+                        Guru Informatika
+                    </p>
+                    <p class="text-base sm:text-lg text-indigo-200 mb-6">
+                        SMP Negeri 2 Manggar
+                    </p>
+                    <div class="w-24 h-1 bg-white mx-auto rounded-full opacity-80"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="py-12 sm:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 fade-in-up font-display">
+                    Selamat Datang di Portal Digital Saya
+                </h2>
+                <p class="text-base sm:text-lg text-gray-600 leading-relaxed fade-in-up">
+                    Media ini saya dedikasikan untuk mendukung proses belajar-mengajar yang lebih efektif, interaktif, dan menyenangkan bagi siswa-siswi SMP Negeri 2 Manggar. Silakan manfaatkan fasilitas yang tersedia untuk membantu aktivitas pembelajaran Anda.
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Feature Cards -->
+        <div class="py-12 sm:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-900 mb-8 sm:mb-12 font-display">Fitur Utama Portal</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <!-- Kokurikuler Card -->
+                    <div class="card-hover bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('kokurikuler')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🏆</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Kelas Pak Fahri</h3>
+                            <p class="text-purple-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Kegiatan Pembelajaran di Kelas Pak Farhi
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Lihat Selengkapnya
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Acak Tempat Duduk Card -->
+                    <div class="card-hover bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('tempat-duduk')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🪑</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Generator Denah Kelas</h3>
+                            <p class="text-blue-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Ciptakan suasana belajar yang baru dan adil. Acak posisi tempat duduk siswa secara otomatis di sini.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Mulai Acak
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Acak Kelompok Card -->
+                    <div class="card-hover bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('kelompok')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🧩</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pembagi Kelompok Cerdas</h3>
+                            <p class="text-green-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Butuh membagi kelompok untuk tugas atau diskusi? Gunakan alat ini untuk pembagian yang cepat dan adil.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Buat Kelompok
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Acak Urutan Tampil Card -->
+                    <div class="card-hover bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white shadow-xl cursor-pointer" onclick="navigateToPage('urutan-tampil')">
+                        <div class="text-center">
+                            <div class="card-icon w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <span class="text-3xl sm:text-4xl">🎯</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">Pengacak Urutan Tampil</h3>
+                            <p class="text-orange-100 mb-4 sm:mb-6 text-sm leading-relaxed">
+                                Tentukan urutan siswa maju ke depan secara acak dan adil untuk presentasi atau tugas.
+                            </p>
+                            <button class="btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm">
+                                Acak Urutan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Section dengan Expandable Feature -->
+        <div class="py-12 sm:py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 expand-toggle" onclick="toggleGameSection()">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 font-display flex items-center justify-center cursor-pointer">
+                        🎮 Games Scratch
+                        <svg class="w-6 h-6 ml-2 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+                        Koleksi game edukatif dan interaktif untuk pembelajaran yang menyenangkan
+                    </p>
+                </div>
+
+                <div id="games-content" class="expandable-section collapsed">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Platformer Game Card -->
+                        <div class="modern-game-card adventure">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🎮</span>
+                                </div>
+                                <h3 class="game-title">Platformer Adventure</h3>
+                                <p class="game-description">
+                                    Petualangan seru melompati rintangan dan mengumpulkan koin.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1221224407" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Main Game
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Maze Runner Game Card -->
+                        <div class="modern-game-card puzzle">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🌀</span>
+                                </div>
+                                <h3 class="game-title">Maze Runner</h3>
+                                <p class="game-description">
+                                    Temukan jalan keluar dari labirin yang menantang.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1221266249" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Mulai Maze
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Fruit Catcher Game Card -->
+                        <div class="modern-game-card arcade">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🍎</span>
+                                </div>
+                                <h3 class="game-title">Fruit Catcher</h3>
+                                <p class="game-description">
+                                    Tangkap buah-buahan yang jatuh untuk skor tertinggi.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1214125971" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Mulai Tangkap
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Scratch Quiz Game Card -->
+                        <div class="modern-game-card education">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🧠</span>
+                                </div>
+                                <h3 class="game-title">Scratch Quiz</h3>
+                                <p class="game-description">
+                                    Kuis perkalian 1 digit yang menantang.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1221369784" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Mulai Kuis
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Pilah Sampah Game Card -->
+                        <div class="modern-game-card education">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🚮</span>
+                                </div>
+                                <h3 class="game-title">Pilah Sampah</h3>
+                                <p class="game-description">
+                                    Game edukasi pilah sampah organik dan anorganik.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1091742791" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Mulai Memilah
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Program Rumus Game Card -->
+                        <div class="modern-game-card education">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🧮</span>
+                                </div>
+                                <h3 class="game-title">Program Rumus</h3>
+                                <p class="game-description">
+                                    Hitung luas, panjang atau lebar persegi panjang.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1221654660" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Mulai Program
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Flappy Bird Game Card -->
+                        <div class="modern-game-card arcade">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🐦</span>
+                                </div>
+                                <h3 class="game-title">Flappy Bird</h3>
+                                <p class="game-description">
+                                    Terbangkan burung melewati ranting-ranting pohon.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1221559382" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Main Flappy
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Rotasi & Revolusi Bumi Game Card -->
+                        <div class="modern-game-card simulation">
+                            <div class="text-center">
+                                <div class="game-icon-wrapper mb-4">
+                                    <span class="game-icon">🌍</span>
+                                </div>
+                                <h3 class="game-title">Rotasi & Revolusi Bumi</h3>
+                                <p class="game-description">
+                                    Simulasi interaktif pergerakan Bumi.
+                                </p>
+                                <a href="https://scratch.mit.edu/projects/1221713152" target="_blank" rel="noopener noreferrer" class="modern-game-btn">
+                                    Lihat Simulasi
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kokurikuler Page dengan background asli -->
+    <div id="kokurikuler-page" class="hidden min-h-screen bg-gradient-to-br from-purple-400 to-pink-500">
+        <div class="py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <button onclick="showHome()" class="modern-back-btn mb-6">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Kembali ke Beranda
+                </button>
+                
+                <div class="professional-container">
+                    <div class="text-center mb-8">
+                        <div class="header-icon">
+                            <span>🏆</span>
+                        </div>
+                        <h2 class="page-title">Computer Science</h2>
+                        <p class="page-subtitle">Pengelolaan kegiatan Kelas Pak Fahri</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Kartu 1: Kokurikuler -->
+                        <div class="professional-card programming">
+                            <div class="card-header">
+                                <h3 class="card-title">🎓 Kokurikuler</h3>
+                                
+                            </div>
+                            <p class="card-description">Acuan rancangan kegiatan kokurikuler 2025</p>
+                            <button onclick="window.open('https://pakfahri.github.io/website/formkokurikuler.html', '_blank')" class="professional-btn">
+                                Buka Rancangan
+                            </button>
+                        </div>
+
+                        <!-- Kartu 2: Berpikir Komputasi -->
+                        <div class="professional-card programming">
+                            <div class="card-header">
+                                <h3 class="card-title">🧩 Berpikir Komputasi</h3>
+                               
+                            </div>
+                            <p class="card-description">Belajar problem solver serta Bermain Blockly Games</p>
+                            <button onclick="window.open('https://pakfahri.github.io/bk/', '_blank')" class="professional-btn">
+                                Mulai Belajar
+                            </button>
+                        </div>
+
+                        <!-- Kartu 3: Pemrograman -->
+                        <div class="professional-card programming">
+                            <div class="card-header">
+                                <h3 class="card-title">🤖 Pemrograman</h3>
+                                
+                            </div>
+                            <p class="card-description">Membuat animasi atau game menggunakan Pictoblox</p>
+                            <button onclick="window.open('https://pakfahri.github.io/pictoblox', '_blank')" class="professional-btn">
+                                Jelajahi
+                            </button>
+                        </div>
+                        
+                        <!-- Kartu 4: Aplikasi Pengolah Kata -->
+                        <div class="professional-card tools">
+                            <div class="card-header">
+                                <h3 class="card-title">📝 Aplikasi Pengolah Kata</h3>
+                               
+                            </div>
+                            <p class="card-description">Mengolah Kata menggunakan Google Docs</p>
+                            <button onclick="window.open('https://pakfahri.github.io/googledocs/', '_blank')" class="professional-btn">
+                                Pelajari
+                            </button>
+                        </div>
+
+                        <!-- Kartu 5: Aplikasi Pengolah Data -->
+                        <div class="professional-card tools">
+                            <div class="card-header">
+                                <h3 class="card-title">📊 Aplikasi Pengolah Data</h3>
+                                
+                            </div>
+                            <p class="card-description">Mengolah Data menggunakan Google Spreadsheets</p>
+                            <button onclick="window.open('https://pakfahri.github.io/googlesheets/', '_blank')" class="professional-btn">
+                                Pelajari
+                            </button>
+                        </div>
+
+                        <!-- Kartu 6: Aplikasi Visual -->
+                        <div class="professional-card tools">
+                            <div class="card-header">
+                                <h3 class="card-title">🖌️ Aplikasi Visual</h3>
+                                
+                            </div>
+                            <p class="card-description">Membuat presentasi / poster menggunakan Canva</p>
+                            <button onclick="window.open('https://pakfahri.github.io/canva/', '_blank')" class="professional-btn">
+                                Pelajari
+                            </button>
+                        </div>
+
+                        <!-- Kartu 7: Literasi Digital -->
+                        <div class="professional-card literacy">
+                            <div class="card-header">
+                                <h3 class="card-title">📱 Literasi Digital</h3>
+                                
+                            </div>
+                            <p class="card-description">Informasi umum terkait teknologi dan dunia digital</p>
+                            <button onclick="window.open('https://pakfahri.github.io/literasidigital/', '_blank')" class="professional-btn">
+                                Pelajari
+                            </button>
+                        </div>
+
+                        <!-- Kartu 8: Etika dan Keamanan Digital -->
+                        <div class="professional-card literacy">
+                            <div class="card-header">
+                                <h3 class="card-title">⚖️ Etika dan Keamanan Digital</h3>
+                                
+                            </div>
+                            <p class="card-description">Tindakan penting diri dalam dunia digital</p>
+                            <button class="professional-btn">
+                                Pelajari
+                            </button>
+                        </div>
+
+                        <!-- Kartu 9: Jurnal 7 KAIH -->
+                        <div class="professional-card journal">
+                            <div class="card-header">
+                                <h3 class="card-title">📔 Jurnal 7 KAIH</h3>
+                               
+                            </div>
+                            <p class="card-description">Jurnal Harianku</p>
+                            <button onclick="window.open('https://pakfahri.github.io/7kaih25/', '_blank')" class="professional-btn">
+                                Buka Jurnal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tempat Duduk Page -->
+    <div id="tempat-duduk-page" class="hidden min-h-screen bg-gradient-to-br from-blue-400 to-cyan-500">
+        <!-- ... (kode tempat duduk tetap sama) ... -->
+    </div>
+
+    <!-- Urutan Tampil Page -->
+    <div id="urutan-tampil-page" class="hidden min-h-screen bg-gradient-to-br from-orange-400 to-red-500">
+        <!-- ... (kode urutan tampil tetap sama) ... -->
+    </div>
+
+    <!-- Kelompok Page -->
+    <div id="kelompok-page" class="hidden min-h-screen bg-gradient-to-br from-green-400 to-teal-500">
+        <!-- ... (kode kelompok tetap sama) ... -->
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <!-- ... (kode contact modal tetap sama) ... -->
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Game Section Expand/Collapse
+        function toggleGameSection() {
+            const gamesContent = document.getElementById('games-content');
+            const expandIcon = document.querySelector('.expand-icon');
+            
+            gamesContent.classList.toggle('collapsed');
+            gamesContent.classList.toggle('expanded');
+            expandIcon.classList.toggle('rotated');
+        }
+
+        // Navigation functions
+        function navigateToPage(page) {
+            const homePage = document.getElementById('home-page');
+            const targetPage = document.getElementById(page + '-page');
+            
+            // Add exit animation to home page
+            homePage.style.transition = 'all 0.4s ease-in';
+            homePage.style.opacity = '0';
+            homePage.style.transform = 'translateX(-50px)';
+            
+            setTimeout(() => {
+                homePage.style.display = 'none';
+                document.querySelectorAll('[id$="-page"]').forEach(p => {
+                    if (p.id !== 'home-page') p.classList.add('hidden');
+                });
+                
+                // Show target page with enter animation
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('page-transition-enter');
+                
+                // Reset any previous transforms
+                targetPage.style.opacity = '1';
+                targetPage.style.transform = 'translateX(0)';
+                
+                // Scroll to top smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 400);
+        }
+
+        function showHome() {
+            const currentPage = document.querySelector('[id$="-page"]:not(.hidden):not(#home-page)');
+            const homePage = document.getElementById('home-page');
+            
+            if (currentPage) {
+                // Add exit animation to current page
+                currentPage.style.transition = 'all 0.4s ease-in';
+                currentPage.style.opacity = '0';
+                currentPage.style.transform = 'translateX(50px)';
+                
+                setTimeout(() => {
+                    document.querySelectorAll('[id$="-page"]').forEach(p => {
+                        if (p.id !== 'home-page') p.classList.add('hidden');
+                    });
+                    
+                    // Show home page with enter animation
+                    homePage.style.display = 'block';
+                    homePage.style.opacity = '0';
+                    homePage.style.transform = 'translateX(-50px)';
+                    
+                    // Scroll to top smoothly
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        homePage.style.transition = 'all 0.5s ease-out';
+                        homePage.style.opacity = '1';
+                        homePage.style.transform = 'translateX(0)';
+                    }, 50);
+                }, 400);
+            } else {
+                // Direct show if no current page
+                homePage.style.display = 'block';
+                homePage.style.opacity = '1';
+                homePage.style.transform = 'translateX(0)';
+                
+                // Scroll to top smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // ... (fungsi lainnya tetap sama) ...
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... (inisialisasi lainnya) ...
+            
+            // Auto expand game section setelah loading
+           // setTimeout(() => {
+             //   toggleGameSection();
+            // }, 1000);
+        });
+    </script>
+</body>
 </html>

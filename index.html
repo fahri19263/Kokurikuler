@@ -22,8 +22,6 @@
     </script>
     <style>
 
-        
-
         /* Fixed Mobile Menu Styles */
 #mobile-menu {
     max-height: calc(100vh - 64px); /* Tinggi viewport minus header */
@@ -543,8 +541,6 @@
 .arrow-rotated {
     transform: rotate(180deg);
 }
-
-        
         
     </style>
 </head>
@@ -903,26 +899,26 @@
                         <div class="bg-gradient-to-r from-cyan-400 to-blue-400 p-4 sm:p-6 rounded-xl text-white card-hover">
                             <h3 class="text-lg sm:text-xl font-bold mb-3">🖌️ Aplikasi Visual</h3>
                             <p class="mb-4 text-sm sm:text-base">Membuat presentasi / poster menggunakan Canva</p>
-                            <button onclick="window.open('https://pakfahri.github.io/canva/', '_blank')" class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
+                            <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Buka
                             </button>
                         </div>
 
-                        <div class="bg-gradient-to-r from-violet-500 to-fuchsia-500 p-4 sm:p-6 rounded-xl text-white card-hover">
+                        <div class="bg-gradient-to-r from-indigo-400 to-purple-400 p-4 sm:p-6 rounded-xl text-white card-hover">
                             <h3 class="text-lg sm:text-xl font-bold mb-3">📱 Literasi Digital</h3>
                             <p class="mb-4 text-sm sm:text-base">Informasi umum terkait teknologi dan dunia digital</p>
-                            <button onclick="window.open('https://pakfahri.github.io/literasidigital/', '_blank')" class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
+                            <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Buka
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-slate-500 to-emerald-500 p-4 sm:p-6 rounded-xl text-white card-hover">
+                        <div class="bg-gradient-to-r from-blue-400 to-indigo-400 p-4 sm:p-6 rounded-xl text-white card-hover">
                             <h3 class="text-lg sm:text-xl font-bold mb-3">⚖️ Etika dan Keamanan Digital</h3>
                             <p class="mb-4 text-sm sm:text-base">Tindakan penting diri dalam dunia digital</p>
                             <button class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
                                 Buka
                             </button>
                         </div>
-                        <div class="bg-gradient-to-r from-pink-300 to-rose-500 p-4 sm:p-6 rounded-xl text-white card-hover">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-400 p-4 sm:p-6 rounded-xl text-white card-hover">
                             <h3 class="text-lg sm:text-xl font-bold mb-3">📔 Jurnal 7 KAIH</h3>
                             <p class="mb-4 text-sm sm:text-base">Jurnal Harianku</p>
                             <button onclick="window.open('https://pakfahri.github.io/7kaih25/', '_blank')" class="bg-white bg-opacity-20 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-opacity-30 transition-all">
@@ -1293,8 +1289,6 @@
 
     <script>
 
-        
-
         // Fungsi toggle untuk Games Section
 function toggleGames() {
     const gamesContent = document.getElementById('games-content');
@@ -1324,7 +1318,6 @@ function toggleMobileMenu() {
         body.style.overflow = '';
     }
 }
-
 
 
         // Navigation functions
@@ -2231,99 +2224,41 @@ document.addEventListener('DOMContentLoaded', function() {
     gamesContainer.classList.add('games-visible');
 });
 
-        // Simple Mobile Nav Auto Hide - Fixed Version
-function initMobileNavAutoHide() {
-    const nav = document.querySelector('nav.bg-white.shadow-lg.sticky');
-    if (!nav) return;
-    
-    let lastScrollY = window.scrollY;
-    let isHidden = false;
-    
-    // Pastikan nav visible di awal
-    nav.style.transform = 'translateY(0)';
-    nav.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-    
-    function handleScroll() {
-        if (window.innerWidth > 768) {
-            // Reset untuk desktop
-            nav.style.transform = 'translateY(0)';
-            return;
-        }
-        
-        const currentScrollY = window.scrollY;
-        const scrollDelta = currentScrollY - lastScrollY;
-        
-        if (scrollDelta > 5 && currentScrollY > 80 && !isHidden) {
-            // Scroll down - hide nav
-            nav.style.transform = 'translateY(-100%)';
-            isHidden = true;
-        } else if (scrollDelta < -5 && isHidden) {
-            // Scroll up - show nav
-            nav.style.transform = 'translateY(0)';
-            isHidden = false;
-        }
-        
-        lastScrollY = currentScrollY;
+        // Auto close mobile menu on scroll
+let scrollTimer;
+
+function handleScroll() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (!mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = ''; // Reset body overflow
     }
     
-    // Throttle scroll event
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                handleScroll();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
+    // Clear previous timer
+    clearTimeout(scrollTimer);
+    
+    // Set timer to prevent multiple triggers during continuous scrolling
+    scrollTimer = setTimeout(() => {
+        // Optional: Add any post-scroll logic here
+    }, 100);
 }
 
-// Initialize dengan delay untuk pastikan DOM ready
-setTimeout(initMobileNavAutoHide, 100);
-window.addEventListener('resize', initMobileNavAutoHide);
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll, { passive: true });
 
-        // ⬇️⬇️⬇️ SOLUSI SUPER SIMPLE - INI YANG PASTI WORK ⬇️⬇️⬇️
-(function() {
-    let lastScroll = 0;
-    let isMobile = window.innerWidth <= 768;
+// Also close menu when clicking outside (optional enhancement)
+document.addEventListener('click', function(e) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuButton = document.querySelector('.md\\:hidden button'); // Mobile menu button
     
-    function handleScroll() {
-        if (!isMobile) return;
-        
-        const nav = document.querySelector('nav');
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > lastScroll && currentScroll > 50) {
-            nav.style.transform = 'translateY(-100%)';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-        
-        lastScroll = currentScroll;
+    if (!mobileMenu.classList.contains('hidden') && 
+        !mobileMenu.contains(e.target) && 
+        !menuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
     }
-    
-    // Hanya attach event listener jika mobile
-    if (isMobile) {
-        window.addEventListener('scroll', handleScroll);
-    }
-    
-    // Update saat resize
-    window.addEventListener('resize', function() {
-        isMobile = window.innerWidth <= 768;
+});
         
-        if (!isMobile) {
-            // Reset nav position di desktop
-            const nav = document.querySelector('nav');
-            nav.style.transform = 'translateY(0)';
-            window.removeEventListener('scroll', handleScroll);
-        } else {
-            window.addEventListener('scroll', handleScroll);
-        }
-    });
-})();
-// ⬆️⬆️⬆️ SOLUSI SUPER SIMPLE END ⬆️⬆️⬆️
-                          
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9848d07a452734c9',t:'MTc1ODc4NTQwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
